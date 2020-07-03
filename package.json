@@ -4,7 +4,8 @@
   "description": "Simple landing page site for my portfolio",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "webpack --env.isDev",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,7 @@
     "postcss-import": "^12.0.1",
     "postcss-loader": "^3.0.0",
     "postcss-simple-vars": "^5.0.2",
+    "pug": "^3.0.0",
     "pug-loader": "^2.4.0",
     "style-loader": "^1.2.1",
     "webpack": "^4.43.0",
