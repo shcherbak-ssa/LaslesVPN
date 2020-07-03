@@ -8,6 +8,7 @@ const SRC_DIRNAME = joinPaths(__dirname, 'src');
 
 /** webpack plugins */
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 /** webpack config */
 const webpackConfig = ({isDev}) => {
@@ -31,12 +32,42 @@ const webpackConfig = ({isDev}) => {
           options: {
             pretty: isDev
           }
+        },
+        {
+          test: /\.css$/,
+          use: [
+            'style-loader',
+            MiniCssExtractPlugin.loader,
+            {
+              loader: 'css-loader',
+              options: {
+                url: !isDev,
+                importLoaders: 1
+              }
+            },
+            {
+              loader: 'postcss-loader',
+              options: {
+                config: {
+                  path: joinPaths(__dirname, 'postcss.config.js')
+                }
+              }
+            }
+          ]
         }
       ]
+    },
+    resolve: {
+      alias: {
+        '@': SRC_DIRNAME
+      }
     },
     plugins: [
       new HtmlWebpackPlugin({
         template: joinPaths(SRC_DIRNAME, 'views', 'index.pug')
+      }),
+      new MiniCssExtractPlugin({
+        filename: 'css/main.css'
       })
     ]
   }
