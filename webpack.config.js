@@ -19,6 +19,7 @@ const webpackConfig = ({isDev}) => {
       path: resolve(__dirname, 'public'),
       filename: 'js/[name].js'
     },
+    watch: isDev,
     module: {
       rules: [
         {
@@ -34,7 +35,7 @@ const webpackConfig = ({isDev}) => {
           }
         },
         {
-          test: /\.css$/,
+          test: /\.scss$/,
           use: [
             'style-loader',
             MiniCssExtractPlugin.loader,
@@ -45,11 +46,12 @@ const webpackConfig = ({isDev}) => {
                 importLoaders: 1
               }
             },
+            'sass-loader',
             {
               loader: 'postcss-loader',
               options: {
                 config: {
-                  path: joinPaths(__dirname, 'postcss.config.js')
+                  path: './postcss.config.js'
                 }
               }
             }
