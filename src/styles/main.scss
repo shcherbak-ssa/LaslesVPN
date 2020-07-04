@@ -18,11 +18,11 @@ h1, h2, h3 {
 
 body {
   font-family: 'rubik-reqular', sans-serif;
-  //-short-size: 100vw x;
+  -short-size: 100vw x;
 }
 #site {
+  overflow-x: hidden;
   position: relative;
-  -short-size: 100%;
 }
 
 /** classes */

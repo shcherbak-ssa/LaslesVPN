@@ -1,4 +1,22 @@
 
+[data-class*="site-content-center"] {
+  max-width: 1140px;
+  margin: 0 auto;
+
+  @media screen and (max-width: 1440px) {
+    margin: 0;
+    max-width: none;
+
+    $design-padding: 150;
+    $padding: $design-padding/$design-window-width * 100%;
+    
+    padding: {
+      left: $padding;
+      right: $padding;
+    }
+  }
+}
+
 // border
 [data-class*="main-border"] {
   border: 2px solid $main-border-color;
@@ -59,20 +77,19 @@
 }
 
 // padding
-$design-padding: 150;
-
-[data-class*="main-padding"] {
-  padding: 0 $design-padding/$design-window-width * 100%;
-}
 
 // position
 [data-class*="pos-center"] {
   -short-position: absolute 50% x x 50%;
   transform: translate(-50%, -50%);
 }
-[data-class*="pos-center-top"] {
+[data-class*="pos-top-center"] {
   -short-position: absolute 50% x x;
   transform: translateY(-50%);
+}
+[data-class*="pos-left-centert"] {
+  -short-position: absolute x x x 50%;
+  transform: translateX(-50%);
 }
 
 // psevdo elements

@@ -1,13 +1,10 @@
 
 .header {
   padding: {
-    top: 50px;
-    bottom: 50px;
+    top: 45px;
+    bottom: 45px;
   };
-  position: absolute;
-  z-index: 9;
-  width: 100%;
-
+  
   &--sing-buttons {
     display: flex;
   }

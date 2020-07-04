@@ -1,7 +1,7 @@
 
 .preview-section {
   padding: {
-    top: 200px;
+    top: 70px;
     bottom: 230px;
   };
   position: relative;
@@ -18,8 +18,13 @@
       image: url('assets/images/header-man.png');
       size: cover;
     };
+    z-index: -1;
     -short-size: 611px 382px;
-    -short-position: absolute 180px 83px x x;
+    -short-position: absolute 43.5px -67px x x;
+
+    @media screen and (max-width: 1440px) {
+      right: 67px;
+    }
   }
 
   &--header, .base-paragraph {
