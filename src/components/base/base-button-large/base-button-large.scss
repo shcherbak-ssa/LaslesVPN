@@ -8,11 +8,6 @@
   -short-size: 250px 60px;
 
   &--shadow {
-    background: rgba($color: $primary-color, $alpha: .35);
-    filter: blur(54px);
-    opacity: 0;
-    transition: .2s;
-    z-index: -1;
     -short-size: 210px 100%;
     -short-position: absolute 0 20px x x;
   }

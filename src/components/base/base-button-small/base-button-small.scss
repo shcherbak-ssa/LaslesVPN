@@ -1,0 +1,25 @@
+
+.base-button-small {
+  border: 1px solid $primary-color;
+  border-radius: 50px;
+  font: {
+    family: 'rubik-medium';
+    size: 16px
+  };
+  transition: .2s;
+  -short-color: $primary-color #fff;
+  -short-size: 150px 45px;
+
+  &--shadow {
+    border-radius: inherit;
+    -short-size: 100px 100%;
+    -short-position: absolute 0 25px x x;
+  }
+  &:hover {
+    -short-color: #fff $primary-color;
+  }
+  &:hover &--shadow {
+    opacity: 1;
+    top: 17px;
+  }
+}
