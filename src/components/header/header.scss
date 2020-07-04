@@ -4,14 +4,7 @@
     top: 45px;
     bottom: 45px;
   };
-  
-  &--sing-buttons {
-    display: flex;
-  }
 }
 
-/** navigation component */
-@import './nav/nav.scss';
-
-/** sing-in button component */
-@import './singin-button/singin-button.scss';
+/** menu component */
+@import './menu/menu.scss';

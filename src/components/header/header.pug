@@ -1,15 +1,9 @@
 
-include ./nav/nav.pug
-include ./singin-button/singin-button.pug
-
-- let navigationItems = ['About', 'Features', 'Pricing', 'Testimonials', 'Help'];
+include ./menu/menu.pug
 
 mixin header()
   header.header(
     data-class="flex-between box-sizing site-content-center"
   )
     +base-logo()
-    +nav(navigationItems)
-    .header--sing-buttons
-      +singin-button()
-      +base-button-small('Sing Up')
+    +menu()

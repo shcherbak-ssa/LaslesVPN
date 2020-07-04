@@ -1,0 +1,16 @@
+
+- let navigationItems = ['About', 'Features', 'Pricing', 'Testimonials', 'Help'];
+
+mixin menu()
+  #menu.menu
+    .menu--button(data-class="flex-center click")
+      each val in [0, 1, 2]
+        .menu--button-line
+
+    nav.menu--nav(hidden)
+      each item in navigationItems
+        +base-link('', item)(class="menu--nav-item")
+
+    .menu--sing-buttons(hidden)
+      .menu--singin-button(data-class="flex-center click font-medium") Sing In
+      +base-button-small('Sing Up')

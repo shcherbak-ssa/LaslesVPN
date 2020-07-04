@@ -9,7 +9,7 @@
 
     $design-padding: 150;
     $padding: $design-padding/$design-window-width * 100%;
-    
+
     padding: {
       left: $padding;
       right: $padding;
@@ -100,7 +100,6 @@
   &::after {
     border-radius: inherit;
     -short-size: 100%;
-    -short-position: absolute x;
     @include psevdo-element;
   }
 }

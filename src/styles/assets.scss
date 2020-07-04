@@ -15,4 +15,5 @@ $main-border-radius: 10px;
 @mixin psevdo-element {
   content: '';
   display: block;
+  position: absolute;
 }

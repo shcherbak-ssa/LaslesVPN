@@ -1,0 +1,74 @@
+
+$menu-button-item-bgcolor: $main-text-color;
+$menu-button-item-bgcolor-hover: $main-header-color;
+
+$design-padding: 130;
+$site-content-width: 1140;
+
+$singin-button-color: $main-header-color;
+
+.menu {
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  &--button {
+    display: none;
+    right: 0;
+    -short-size: x 36px;
+
+    &-line {
+      background: $menu-button-item-bgcolor;
+      border-radius: 10px;
+      width: 36px;
+      height: 4px;
+      transition-property: none;
+      transform-origin: left center;
+      transition: .4s;
+
+      &:nth-child(1) {
+        .menu.is-active & {
+          transform: rotate(45deg);
+        }
+      }
+      &:nth-child(2) {
+        margin: 5px 0;
+
+        .menu.is-active & {
+          opacity: 0;
+          margin: 8.5px 0;
+        }
+      }
+      &:nth-child(3) {
+        .menu.is-active & {
+          transform: rotate(-45deg);
+        }
+      }
+    }
+    &:hover &-line {
+      background: $menu-button-item-bgcolor-hover;
+    }
+  }
+  &--nav {
+    display: flex;
+  
+    &-item {
+      margin: 0 20px;
+  
+      @media screen and (max-width: 1200px) {
+        margin: 0 15px
+      }
+    }
+  }
+  &--sing-buttons {
+    display: flex;
+    padding-left: $design-padding/$site-content-width * 100%;;
+  }
+
+  &--singin-button {
+    color: $singin-button-color;
+    font-size: 16px;
+    margin-right: 20px;
+    -short-size: 70px 45px;
+  }
+}
