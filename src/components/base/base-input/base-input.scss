@@ -22,13 +22,6 @@ $input-icon-color: $main-header-color;
     color: $input-placeholder-color;
     left: 52px;
     transition: .4s;
-
-    .is-active &,
-    .is-success &,
-    .is-error & {
-      left: 252px;
-      opacity: 0;
-    }
   }
   &--status {
     right: 20px;
@@ -48,5 +41,12 @@ $input-icon-color: $main-header-color;
   }
   &--input, &--placeholder, &--icon, &--status, &--error {
     position: absolute;
+  }
+
+  &.is-active &--placeholder,
+  &.is-success &--placeholder,
+  &.is-error &--placeholder {
+    left: 252px;
+    opacity: 0;
   }
 }
