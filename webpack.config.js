@@ -17,9 +17,9 @@ const webpackConfig = ({isDev}) => {
     entry: joinPaths(SRC_DIRNAME, 'main.js'),
     output: {
       path: resolve(__dirname, 'public'),
-      filename: 'js/[name].js'
+      filename: '[name].js'
     },
-    watch: isDev,
+    //watch: isDev,
     module: {
       rules: [
         {
@@ -46,7 +46,6 @@ const webpackConfig = ({isDev}) => {
                 importLoaders: 1
               }
             },
-            'sass-loader',
             {
               loader: 'postcss-loader',
               options: {
@@ -54,7 +53,8 @@ const webpackConfig = ({isDev}) => {
                   path: './postcss.config.js'
                 }
               }
-            }
+            },
+            'sass-loader',
           ]
         }
       ]
@@ -69,7 +69,7 @@ const webpackConfig = ({isDev}) => {
         template: joinPaths(SRC_DIRNAME, 'views', 'index.pug')
       }),
       new MiniCssExtractPlugin({
-        filename: 'css/main.css'
+        filename: '[name].css'
       })
     ]
   }

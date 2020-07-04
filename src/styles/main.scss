@@ -1,0 +1,28 @@
+
+/** fonts */
+@import './fonts.scss';
+
+/** assets */
+@import './assets.scss';
+
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+body {
+  font-family: 'rubik-reqular', sans-serif;
+  position: relative;
+  -short-size: 100vw 100vh;
+}
+#site {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -short-size: 100%;
+}
+
+/** components */
+@import '@/components/components.scss';

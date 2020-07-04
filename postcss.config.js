@@ -4,7 +4,7 @@
 const postcssConfig = {
   plugins: {
     'autoprefixer': {},
-    'postcss-short': { prefix: 'x' },
+    'postcss-short': { prefix: 'short', skip: 'x' },
   }
 };
 

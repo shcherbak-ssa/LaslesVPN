@@ -1,0 +1,15 @@
+
+$base-link-color: $main-text-color;
+$base-link-hover-color: $main-title-color;
+
+.base-link {
+  cursor: pointer;
+  display: block;
+  font-size: 16px;
+  text-decoration: none;
+  -short-color: $base-link-color x;
+
+  &:hover {
+    -short-color: $base-link-hover-color x;
+  }
+}
