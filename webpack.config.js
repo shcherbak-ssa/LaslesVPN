@@ -19,7 +19,7 @@ const webpackConfig = ({isDev}) => {
       path: resolve(__dirname, 'public'),
       filename: '[name].js'
     },
-    //watch: isDev,
+    watch: isDev,
     module: {
       rules: [
         {

@@ -5,3 +5,12 @@
 $primary-color: #F53838;
 $main-title-color: #0B132A;
 $main-text-color: #4F5665;
+
+// sizes
+$main-border-radius: 10px;
+
+/** mixins */
+@mixin psevdo-element {
+  content: '';
+  display: block;
+}

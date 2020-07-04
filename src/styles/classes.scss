@@ -1,0 +1,23 @@
+
+[data-class*="main-border-radius"] {
+  border-radius: $main-border-radius;
+}
+
+// flexible
+[data-class*="flex-center"] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// psevdo elements
+[data-class*="click"] {
+  cursor: pointer;
+  position: relative;
+
+  &::after {
+    -short-size: 100%;
+    -short-position: absolute x;
+    @include psevdo-element;
+  }
+}
