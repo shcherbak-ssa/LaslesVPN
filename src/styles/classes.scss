@@ -9,12 +9,15 @@
 }
 
 // border-radius
+[data-class*="circle"] {
+  border-radius: 50%;
+}
 [data-class*="main-border-radius"] {
   border-radius: $main-border-radius;
 }
 
 // box-sizing
-[data-class*="box-sixing"] {
+[data-class*="box-sizing"] {
   box-sizing: border-box;
 }
 
@@ -45,6 +48,10 @@
 }
 
 // position
+[data-class*="pos-center"] {
+  -short-position: absolute 50% x x 50%;
+  transform: translate(-50%, -50%);
+}
 [data-class*="pos-center-top"] {
   -short-position: absolute 50% x x;
   transform: translateY(-50%);
