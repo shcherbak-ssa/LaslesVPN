@@ -1,7 +1,21 @@
 
+// border
+[data-class*="main-border"] {
+  border: 2px solid $main-border-color;
+
+  &.is-active {
+    border-color: $primary-color;
+  }
+}
+
 // border-radius
 [data-class*="main-border-radius"] {
   border-radius: $main-border-radius;
+}
+
+// box-sizing
+[data-class*="box-sixing"] {
+  box-sizing: border-box;
 }
 
 // font-family
@@ -18,11 +32,22 @@
   z-index: -1;
 }
 
+// sizes
+[data-class*="full"] {
+  -short-size: 100%;
+}
+
 // flexible
 [data-class*="flex-center"] {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+// position
+[data-class*="pos-center-top"] {
+  -short-position: absolute 50% x x;
+  transform: translateY(-50%);
 }
 
 // psevdo elements

@@ -1,0 +1,19 @@
+
+mixin base-input(input)
+  - let inputIcon = `assets/icons/${input.icon}.svg`
+  .base-input(data-input-type=input.type, data-class="click box-sizing")
+    input.base-input--input(
+      type="text",
+      data-class="full main-border-radius main-border box-sixing"
+    )
+    img.base-input--icon(
+      src=inputIcon,
+      data-class="pos-center-top"
+    )
+    .base-input--placeholder(data-class="pos-center-top")= input.placeholder
+    img.base-input--status(
+      src=""
+      data-input-status
+      data-class="pos-center-top"
+    )
+    .base-input--error(data-input-error)
