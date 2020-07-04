@@ -1,0 +1,20 @@
+
+.header {
+  padding: {
+    top: 50px;
+    bottom: 50px;
+  };
+  position: absolute;
+  z-index: 9;
+  width: 100%;
+
+  &--sing-buttons {
+    display: flex;
+  }
+}
+
+/** navigation component */
+@import './nav/nav.scss';
+
+/** sing-in button component */
+@import './singin-button/singin-button.scss';

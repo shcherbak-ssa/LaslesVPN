@@ -1,0 +1,15 @@
+
+include ./nav/nav.pug
+include ./singin-button/singin-button.pug
+
+- let navigationItems = ['About', 'Features', 'Pricing', 'Testimonials', 'Help'];
+
+mixin header()
+  header.header(
+    data-class="w100 flex-between main-padding box-sizing"
+  )
+    +base-logo()
+    +nav(navigationItems)
+    .header--sing-buttons
+      +singin-button()
+      +base-button-small('Sing Up')

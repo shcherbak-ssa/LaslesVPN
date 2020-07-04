@@ -39,6 +39,9 @@
 }
 
 // sizes
+[data-class*="w100"] {
+  -short-size: 100% x;
+}
 [data-class*="full"] {
   -short-size: 100%;
 }
@@ -48,6 +51,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+[data-class*="flex-between"] {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+// padding
+$design-padding: 150;
+
+[data-class*="main-padding"] {
+  padding: 0 $design-padding/$design-window-width * 100%;
 }
 
 // position
