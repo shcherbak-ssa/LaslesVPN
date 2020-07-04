@@ -18,13 +18,10 @@ h1, h2, h3 {
 
 body {
   font-family: 'rubik-reqular', sans-serif;
-  position: relative;
-  -short-size: 100vw 100vh;
+  //-short-size: 100vw x;
 }
 #site {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: relative;
   -short-size: 100%;
 }
 

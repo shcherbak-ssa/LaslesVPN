@@ -12,7 +12,7 @@
 [data-class*="circle"] {
   border-radius: 50%;
 }
-[data-class*="main-border-radius"] {
+[data-class*="main-radius"] {
   border-radius: $main-border-radius;
 }
 
@@ -24,6 +24,9 @@
 // font-family
 [data-class*="font-medium"] {
   font-family: 'rubik-medium', sans-serif;
+}
+[data-class*="font-bold"] {
+  font-family: 'rubik-bold', sans-serif;
 }
 
 // shadows

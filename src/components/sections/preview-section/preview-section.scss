@@ -1,0 +1,28 @@
+
+.preview-section {
+  padding: {
+    top: 200px;
+    bottom: 230px;
+  };
+  position: relative;
+
+  &--header {
+    font-size: 50px;
+    margin-bottom: 20px;
+  }
+  .base-paragraph {
+    margin-bottom: 50px;
+  }
+  &--illustration {
+    background: {
+      image: url('assets/images/header-man.png');
+      size: cover;
+    };
+    -short-size: 611px 382px;
+    -short-position: absolute 180px 83px x x;
+  }
+
+  &--header, .base-paragraph {
+    width: 555px;
+  }
+}
