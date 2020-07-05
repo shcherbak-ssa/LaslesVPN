@@ -3,19 +3,22 @@ $menu-button-item-bgcolor: $main-text-color;
 $menu-button-item-bgcolor-hover: $main-header-color;
 
 $design-padding: 130;
-$site-content-width: 1140;
+$design-menu-width: 834;
 
 $singin-button-color: $main-header-color;
 
 .menu {
-  display: flex;
-  align-items: center;
   position: relative;
 
   &--button {
     display: none;
     right: 0;
     -short-size: x 36px;
+
+    @media screen and (max-width: 1100px) {
+      display: flex;
+      flex-direction: column;
+    }
 
     &-line {
       background: $menu-button-item-bgcolor;
@@ -27,20 +30,20 @@ $singin-button-color: $main-header-color;
       transition: .4s;
 
       &:nth-child(1) {
-        .menu.is-active & {
+        .menu.is-open & {
           transform: rotate(45deg);
         }
       }
       &:nth-child(2) {
         margin: 5px 0;
 
-        .menu.is-active & {
+        .menu.is-open & {
           opacity: 0;
           margin: 8.5px 0;
         }
       }
       &:nth-child(3) {
-        .menu.is-active & {
+        .menu.is-open & {
           transform: rotate(-45deg);
         }
       }
@@ -49,8 +52,15 @@ $singin-button-color: $main-header-color;
       background: $menu-button-item-bgcolor-hover;
     }
   }
+  &--container {
+    background: #fff;
+    display: flex;
+    align-items: center;
+    -short-position: fixed 0 0 x x;
+  }
   &--nav {
     display: flex;
+    //display: none;
   
     &-item {
       margin: 0 20px;
@@ -62,7 +72,8 @@ $singin-button-color: $main-header-color;
   }
   &--sing-buttons {
     display: flex;
-    padding-left: $design-padding/$site-content-width * 100%;;
+    //display: none;
+    //padding-left: $design-padding/$design-menu-width * 100%;
   }
 
   &--singin-button {

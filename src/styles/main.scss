@@ -18,6 +18,7 @@ h1, h2, h3 {
 
 body {
   font-family: 'rubik-reqular', sans-serif;
+  position: relative;
   //-short-size: 100vw x;
 }
 #site {
@@ -30,3 +31,6 @@ body {
 
 /** components */
 @import '@/components/components.scss';
+
+/** need to remove */
+@import './popup.scss';
