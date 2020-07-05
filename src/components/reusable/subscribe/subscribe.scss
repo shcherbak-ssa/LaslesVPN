@@ -1,0 +1,16 @@
+
+.subscribe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &--header {
+    margin-bottom: 10px;
+  }
+  &--paragraph {
+    margin-bottom: 50px;
+  }
+  &--input {
+    margin-bottom: 40px;
+  }
+}

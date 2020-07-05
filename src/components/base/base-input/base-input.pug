@@ -1,7 +1,11 @@
 
 mixin base-input(input)
   - let inputIcon = `assets/icons/${input.icon}.svg`
-  .base-input(data-input-type=input.type, data-class="click box-sizing")
+  .base-input(
+    class=attributes.class,
+    data-input-type=input.type,
+    data-class="click box-sizing"
+  )
     input.base-input--input(
       type="text",
       data-class="full main-radius main-border box-sixing"

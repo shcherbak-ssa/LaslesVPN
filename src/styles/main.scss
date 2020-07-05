@@ -25,12 +25,12 @@ body {
   overflow-x: hidden;
   position: relative;
 }
+#reusable-components {
+  display: none;
+}
 
 /** classes */
 @import './classes.scss';
 
 /** components */
 @import '@/components/components.scss';
-
-/** need to remove */
-@import './popup.scss';

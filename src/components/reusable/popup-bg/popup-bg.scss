@@ -1,0 +1,34 @@
+
+.popup-bg {
+  animation: {
+    name: popup-bg-show;
+    duration: .6s;
+    fill-mode: forwards;
+  };
+  background: $popup-bgcolor;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  -short-size: 10px;
+
+  &.is-close {
+    animation: {
+      name: popup-bg-hide;
+      duration: .6s;
+      fill-mode: forwards;
+    };
+  }
+}
+
+@keyframes popup-bg-show {
+  to {
+    -short-size: 300vw;
+  }
+}
+@keyframes popup-bg-hide {
+  from {
+    -short-size: 300vw;
+  }
+  to {
+    -short-size: 0;
+  }
+}
