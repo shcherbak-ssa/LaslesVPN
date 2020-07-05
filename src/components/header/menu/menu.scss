@@ -9,6 +9,7 @@ $singin-button-color: $main-header-color;
 
 .menu {
   position: relative;
+  z-index: 9999;
 
   &--button {
     display: none;
@@ -56,7 +57,11 @@ $singin-button-color: $main-header-color;
     background: #fff;
     display: flex;
     align-items: center;
-    -short-position: fixed 0 0 x x;
+    
+    @media screen and (max-width: 1024px) {
+      opacity: 0;
+      -short-position: fixed 0 0 x x;
+    }
   }
   &--nav {
     display: flex;
