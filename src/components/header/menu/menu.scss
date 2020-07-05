@@ -8,12 +8,15 @@ $design-menu-width: 834;
 $singin-button-color: $main-header-color;
 
 .menu {
+  display: flex;
+  align-items: center;
   position: relative;
   z-index: 9999;
 
   &--button {
     display: none;
     right: 0;
+    z-index: 1;
     -short-size: x 36px;
 
     @media screen and (max-width: 1100px) {
@@ -24,11 +27,10 @@ $singin-button-color: $main-header-color;
     &-line {
       background: $menu-button-item-bgcolor;
       border-radius: 10px;
-      width: 36px;
-      height: 4px;
       transition-property: none;
       transform-origin: left center;
       transition: .4s;
+      -short-size: 36px 4px;
 
       &:nth-child(1) {
         .menu.is-open & {
@@ -53,19 +55,26 @@ $singin-button-color: $main-header-color;
       background: $menu-button-item-bgcolor-hover;
     }
   }
-  &--container {
-    background: #fff;
-    display: flex;
-    align-items: center;
-    
-    @media screen and (max-width: 1024px) {
-      opacity: 0;
-      -short-position: fixed 0 0 x x;
-    }
-  }
   &--nav {
     display: flex;
-    //display: none;
+
+    @media screen and (max-width: 1024px) {
+      opacity: 0;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      -short-size: 50vw 100vh;
+      -short-position: fixed 0 -50% x x;
+
+      .menu.is-open & {
+        animation: {
+          name: menu-nav-show;
+          duration: .4s;
+          delay: .4s;
+          fill-mode: forwards;
+        };
+      }
+    }
   
     &-item {
       margin: 0 20px;
@@ -73,18 +82,64 @@ $singin-button-color: $main-header-color;
       @media screen and (max-width: 1200px) {
         margin: 0 15px
       }
+      @media screen and (max-width: 1024px) {
+        margin: 20px 0;
+      }
     }
   }
+
   &--sing-buttons {
     display: flex;
-    //display: none;
-    //padding-left: $design-padding/$design-menu-width * 100%;
-  }
 
+    @media screen and (max-width: 1024px) {
+      opacity: 0;
+      justify-content: center;
+      align-items: center;
+      -short-position: fixed 0 x x -50%;
+      -short-size: 50vw 100vh;
+
+      .menu.is-open & {
+        animation: {
+          name: menu-sing-buttons-show;
+          duration: .4s;
+          delay: .4s;
+          fill-mode: forwards;
+        };
+      }
+    }
+  }
   &--singin-button {
     color: $singin-button-color;
     font-size: 16px;
     margin-right: 20px;
     -short-size: 70px 45px;
+  }
+
+  &--adaptive-bg {
+    background: #fff;
+    animation: menu-container-show .6s .2s forwards;
+    border-radius: 50%;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    -short-size: 10px;
+  }
+}
+
+@keyframes menu-container-show {
+  to {
+    -short-size: 300vw;
+  }
+}
+@keyframes menu-nav-show {
+  to {
+    opacity: 1;
+    right: 0;
+  }
+}
+@keyframes menu-sing-buttons-show {
+  to {
+    opacity: 1;
+    left: 0;
   }
 }

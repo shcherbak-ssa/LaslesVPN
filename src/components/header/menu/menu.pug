@@ -7,11 +7,12 @@ mixin menu()
       each val in [0, 1, 2]
         .menu--button-line
 
-    .menu--container
-      nav.menu--nav(hidden)
-        each item in navigationItems
-          +base-link('', item)(class="menu--nav-item")
+    nav.menu--nav
+      each item in navigationItems
+        +base-link('', item)(class="menu--nav-item")
 
-      .menu--sing-buttons(hidden)
-        .menu--singin-button(data-class="flex-center click font-medium") Sing In
-        +base-button-small('Sing Up')
+    .menu--sing-buttons
+      .menu--singin-button(data-class="flex-center click font-medium") Sing In
+      +base-button-small('Sing Up')
+
+    .menu--adaptive-bg
