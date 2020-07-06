@@ -2,17 +2,49 @@
 .preview-section {
   padding: {
     top: 70px;
-    bottom: 230px;
+    bottom: 130px;
   };
   position: relative;
+
+  @media screen and (max-width: 767px) {
+    padding: {
+      top: 30px;
+      bottom: 100px;
+    };
+  }
 
   &--header {
     font-size: 50px;
     margin-bottom: 20px;
+
+    @media screen and (max-width: 767px) {
+      font-size: 40px;
+    }
+    @media screen and (max-width: 470px) {
+      font-size: 35px;
+    }
   }
-  .base-paragraph {
+  &--paragraph {
     margin-bottom: 50px;
+
+    @media screen and (max-width: 767px) {
+      text-shadow: 0 0.5px $main-text-color;
+    }
   }
+  &--button {
+    @media screen and (max-width: 360px) {
+      margin: 0 auto;
+    }
+  }
+
+  &--header, &--paragraph {
+    width: 555px;
+
+    @media screen and (max-width: 767px) {
+      width: 100%;
+    }
+  }
+
   &--illustration {
     background: {
       image: url('assets/images/header-man.png');
@@ -22,12 +54,24 @@
     -short-size: 611px 382px;
     -short-position: absolute 43.5px -67px x x;
 
+    &::after {
+      background: rgba(255, 255, 255, 0.3);
+      -short-position: absolute 0 x x 0;
+      @include psevdo-element;
+
+      @media screen and (max-width: 1150px) {
+        -short-size: 100%;
+      }
+      @media screen and (max-width: 767px) {
+        background: rgba(255, 255, 255, 0.6);
+      }
+    }
+
     @media screen and (max-width: 1440px) {
       right: 67px;
     }
-  }
-
-  &--header, .base-paragraph {
-    width: 555px;
+    @media screen and (max-width: 1150px) {
+      right: -10%;
+    }
   }
 }
