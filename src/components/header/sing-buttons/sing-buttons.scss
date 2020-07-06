@@ -12,7 +12,18 @@ $singin-button-color: $main-header-color;
     -short-size: 50vw 100vh;
 
     .header.is-menu-open & {
-      animation: sing-buttons-show .4s .4s forwards;
+      animation: sing-buttons-show .4s .3s forwards;
+    }
+    .header.is-menu-close & {
+      animation: sing-buttons-hide .4s forwards;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    -short-size: 100vw 25vh;
+    top: 70vh;
+
+    .header.is-menu-open & {
+      animation: sing-buttons-show .4s .3s forwards;
     }
     .header.is-menu-close & {
       animation: sing-buttons-hide .4s forwards;
@@ -21,6 +32,12 @@ $singin-button-color: $main-header-color;
 
   .subscribe, &--header {
     margin-bottom: 20px;
+  }
+
+  &--header {
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
   }
 
   &--container {

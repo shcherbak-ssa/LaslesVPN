@@ -7,19 +7,17 @@
   -short-size: 10px;
 
   &.is-close {
-    animation: popup-bg-hide .6s .4s forwards;
+    animation: popup-bg-hide .4s .3s forwards;
+    -short-size: 400vw;
   }
 }
 
 @keyframes popup-bg-show {
   to {
-    -short-size: 300vw;
+    -short-size: 400vw;
   }
 }
 @keyframes popup-bg-hide {
-  from {
-    -short-size: 300vw;
-  }
   to {
     -short-size: 0;
   }
