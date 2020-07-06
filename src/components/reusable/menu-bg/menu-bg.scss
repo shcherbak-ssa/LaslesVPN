@@ -1,15 +1,27 @@
 
 .menu-bg {
   background: #fff;
-  animation: menu-container-show .6s .2s forwards;
+  animation: menu-bg-show .6s .2s forwards;
   position: fixed;
   transform: translate(-50%, -50%);
   z-index: -1;
   -short-size: 10px;
+
+  &.is-close {
+    animation: menu-bg-hide .6s .2s forwards;
+  }
 }
 
-@keyframes menu-container-show {
+@keyframes menu-bg-show {
   to {
     -short-size: 300vw;
+  }
+}
+@keyframes menu-bg-hide {
+  from {
+    -short-size: 300vw;
+  }
+  to {
+    -short-size: 0;
   }
 }

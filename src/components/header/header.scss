@@ -5,9 +5,9 @@
     bottom: 45px;
   };
   position: relative;
+  z-index: 9999;
 
   &.is-menu-open {
-    z-index: 9999;
   }
 }
 

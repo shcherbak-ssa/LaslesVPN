@@ -8,15 +8,13 @@
     align-items: center;
     justify-content: center;
     -short-size: 50vw 100vh;
-    -short-position: fixed 0 -50% x x;
+    -short-position: fixed 0 -100% x x;
 
     .header.is-menu-open & {
-      animation: {
-        name: nav-show;
-        duration: .4s;
-        delay: .4s;
-        fill-mode: forwards;
-      };
+      animation: nav-show .4s .4s forwards;
+    }
+    .header.is-menu-close & {
+      animation: nav-hide .4s forwards;
     }
   }
 
@@ -27,6 +25,7 @@
       margin: 0 15px
     }
     @media screen and (max-width: 1024px) {
+      font-size: 24px;
       margin: 20px 0;
     }
   }
@@ -36,5 +35,15 @@
   to {
     opacity: 1;
     right: 0;
+  }
+}
+@keyframes nav-hide {
+  from {
+    opacity: 1;
+    right: 0;
+  }
+  to {
+    opacity: 0;
+    right: -100%;
   }
 }

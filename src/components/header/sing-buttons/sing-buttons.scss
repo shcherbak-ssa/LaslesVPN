@@ -2,23 +2,29 @@
 $singin-button-color: $main-header-color;
 
 .sing-buttons {
-  display: flex;
-
   @media screen and (max-width: 1024px) {
     opacity: 0;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    -short-position: fixed 0 x x -50%;
+    -short-position: fixed 0 x x -100%;
     -short-size: 50vw 100vh;
 
     .header.is-menu-open & {
-      animation: {
-        name: sing-buttons-show;
-        duration: .4s;
-        delay: .4s;
-        fill-mode: forwards;
-      };
+      animation: sing-buttons-show .4s .4s forwards;
     }
+    .header.is-menu-close & {
+      animation: sing-buttons-hide .4s forwards;
+    }
+  }
+
+  .subscribe, &--header {
+    margin-bottom: 20px;
+  }
+
+  &--container {
+    display: flex;
   }
   &--singin {
     color: $singin-button-color;
@@ -32,5 +38,15 @@ $singin-button-color: $main-header-color;
   to {
     opacity: 1;
     left: 0;
+  }
+}
+@keyframes sing-buttons-hide {
+  from {
+    opacity: 1;
+    left: 0;
+  }
+  to {
+    opacity: 0;
+    left: -100%;
   }
 }
