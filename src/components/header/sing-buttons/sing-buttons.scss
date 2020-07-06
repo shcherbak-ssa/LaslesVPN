@@ -31,12 +31,14 @@ $singin-button-color: $main-header-color;
   }
 
   .subscribe, &--header {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
   }
 
   &--header {
-    @media screen and (max-width: 767px) {
-      display: none;
+    display: none;
+
+    @media screen and (max-width: 1024px) and (min-width: 767px) {
+      display: block;
     }
   }
 
