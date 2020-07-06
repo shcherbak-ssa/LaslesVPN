@@ -1,0 +1,21 @@
+
+//- assets
+-
+  let numberItems = [
+    { icon: 'user', number: '90+', description: 'Users' },
+    { icon: 'location', number: '30+', description: 'Locations' },
+    { icon: 'server', number: '50+', description: 'Servers' }
+  ]
+
+//- components
+include ./devider/devider.pug
+include ./number-item/number-item.pug
+
+//- component
+mixin numbers-section()
+  +base-section-container('')
+    .numbers-section(data-class="main-radius flex-between")
+      each item in numberItems
+        +number-item(item)
+        +devider()
+      

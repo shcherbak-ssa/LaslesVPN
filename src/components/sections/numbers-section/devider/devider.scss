@@ -1,0 +1,11 @@
+
+$devider-bgcolor: #EEEFF2;
+
+.devider {
+  background: $devider-bgcolor;
+  -short-size: 2px 125px;
+
+  &:last-child {
+    display: none;
+  }
+}

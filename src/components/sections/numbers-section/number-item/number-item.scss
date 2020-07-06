@@ -1,0 +1,21 @@
+
+$icon-bgcolor: #FFECEC;
+
+.number-item {
+  display: flex;
+
+  &--icon {
+    background: $icon-bgcolor;
+    margin-right: 36.5px;
+    -short-size: 55px;
+  }
+  &--number {
+    color: $main-header-color;
+    font-size: 25px;
+    margin-bottom: 5px;
+  }
+  &--description {
+    color: $main-text-color;
+    font-size: 20px;
+  }
+}

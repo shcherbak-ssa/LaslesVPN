@@ -1,6 +1,11 @@
 
 //- assets
-- let inputs = {email: {icon: 'user-input', type: 'email', placeholder: 'E-mail address'}}
+-
+  let inputs = {
+    email: {
+      icon: 'user-input', type: 'email', placeholder: 'E-mail address'
+    }
+  }
 
 //- components
 include ../components/components.pug
@@ -16,6 +21,8 @@ html(lang="en")
     #site(data-class="w100")
       +header()
       +preview-section()
+      +numbers-section()
+      div(style="width: 100%;height: 200px")
     +popup()
     #reusable-components
       +menu-bg()

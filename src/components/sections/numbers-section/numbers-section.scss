@@ -1,0 +1,17 @@
+
+$design-section-width: 1440;
+$design-padding: 90;
+
+.numbers-section {
+  background: #ffffff;
+  box-shadow: 0 30px 60px rgba(13, 16, 37, 0.2);
+  height: 200px;
+  padding: 0 ($design-padding/$design-section-width * 100%);
+  position: relative;
+}
+
+/** devider component */
+@import './devider/devider.scss';
+
+/** number-item component */
+@import './number-item/number-item.scss';
