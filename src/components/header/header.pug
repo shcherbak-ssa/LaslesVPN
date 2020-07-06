@@ -1,9 +1,13 @@
 
-include ./menu/menu.pug
+include ./burger-button/burger-button.pug
+include ./nav/nav.pug
+include ./sing-buttons/sing-buttons.pug
 
 mixin header()
-  header.header(
+  header#header.header(
     data-class="flex-between box-sizing site-content-center"
   )
     +base-logo()
-    +menu()
+    +burger-button()(class="header--burger-button")
+    +nav()(class="header--nav")
+    +sing-buttons()(class="header--sing-buttons")

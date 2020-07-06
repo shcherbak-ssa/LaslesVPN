@@ -4,7 +4,18 @@
     top: 45px;
     bottom: 45px;
   };
+  position: relative;
+
+  &.is-menu-open {
+    z-index: 9999;
+  }
 }
 
-/** menu component */
-@import './menu/menu.scss';
+/** burger-button component */
+@import './burger-button/burger-button.scss';
+
+/** nav component */
+@import './nav/nav.scss';
+
+/** sing-buttons component */
+@import './sing-buttons/sing-buttons.scss';

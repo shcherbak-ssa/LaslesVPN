@@ -1,0 +1,15 @@
+
+.menu-bg {
+  background: #fff;
+  animation: menu-container-show .6s .2s forwards;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  -short-size: 10px;
+}
+
+@keyframes menu-container-show {
+  to {
+    -short-size: 300vw;
+  }
+}

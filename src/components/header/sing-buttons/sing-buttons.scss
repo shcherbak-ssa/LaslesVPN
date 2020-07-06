@@ -1,0 +1,36 @@
+
+$singin-button-color: $main-header-color;
+
+.sing-buttons {
+  display: flex;
+
+  @media screen and (max-width: 1024px) {
+    opacity: 0;
+    justify-content: center;
+    align-items: center;
+    -short-position: fixed 0 x x -50%;
+    -short-size: 50vw 100vh;
+
+    .header.is-menu-open & {
+      animation: {
+        name: sing-buttons-show;
+        duration: .4s;
+        delay: .4s;
+        fill-mode: forwards;
+      };
+    }
+  }
+  &--singin {
+    color: $singin-button-color;
+    font-size: 16px;
+    margin-right: 20px;
+    -short-size: 70px 45px;
+  }
+}
+
+@keyframes sing-buttons-show {
+  to {
+    opacity: 1;
+    left: 0;
+  }
+}

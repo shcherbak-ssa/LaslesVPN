@@ -1,0 +1,7 @@
+
+- let navigationItems = ['About', 'Features', 'Pricing', 'Testimonials', 'Help'];
+
+mixin nav()
+  nav.nav(class=attributes.class)
+    each item in navigationItems
+      +base-link('', item)(class="nav--item")
