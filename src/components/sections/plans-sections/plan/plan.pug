@@ -1,3 +1,17 @@
 
+//- components
+include ./plan-list-item/plan-list-item.pug
+
+//- component
 mixin plan(planItem)
+  - let planImage = `assets/images/${planItem.image}.png`;
+  
   .plan(data-class="main-border box-sizing flex-column")
+    .plan--description
+      img.plan--image(src=planImage)
+      +base-header-level-3(planItem.header)(class="plan--header")
+      each item in planItem.list
+        +plan-list-item(item)
+    .plan--choise
+      .plan--cost= cost
+      +base-button-small('Select')(class="plan--button")
