@@ -2,9 +2,27 @@
 //- assets
 -
   let planItems = [
-    { image: 'free-plan', header: 'Free Plan', },
-    { image: 'standard-plan', header: 'Standard Plan', name: '9' },
-    { image: 'premium-plan', header: 'Premium Plan', name: '12' }
+    { image: 'free-plan', header: 'Free Plan', list: [
+      'Unlimited Bandwitch',
+      'Encrypted Connection',
+      'No Traffic Logs',
+      'Works on All Devices'
+    ] },
+    { image: 'standard-plan', header: 'Standard Plan', cost: '9', list: [
+      'Unlimited Bandwitch',
+      'Encrypted Connection',
+      'Yes Traffic Logs',
+      'Works on All Devices',
+      'Connect Anyware'
+    ] },
+    { image: 'premium-plan', header: 'Premium Plan', cost: '12', list: [
+      'Unlimited Bandwitch',
+      'Encrypted Connection',
+      'Yes Traffic Logs',
+      'Works on All Devices',
+      'Connect Anyware',
+      'Get New Features'
+    ] }
   ]
 
 //- components
@@ -18,4 +36,7 @@ mixin plans-sections()
      'Let\'s choose the package that is best for you and explore it happily and cheerfully.'
      )(class="plans-sections--paragraph")
     .plans-sections--container(data-class="box-sizing flex-between")
-
+      each item in planItems
+        +plan(item)
+        
+      

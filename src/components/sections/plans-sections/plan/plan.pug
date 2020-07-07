@@ -5,13 +5,18 @@ include ./plan-list-item/plan-list-item.pug
 //- component
 mixin plan(planItem)
   - let planImage = `assets/images/${planItem.image}.png`;
-  
-  .plan(data-class="main-border box-sizing flex-column")
-    .plan--description
+  - let cost = planItem.cost ? `$${planItem.cost} <span>/ mo</span>` : 'Free';
+
+  .plan(data-class="main-radius main-border box-sizing flex-between")
+    .plan--description(data-class="flex-column")
       img.plan--image(src=planImage)
       +base-header-level-3(planItem.header)(class="plan--header")
-      each item in planItem.list
-        +plan-list-item(item)
-    .plan--choise
-      .plan--cost= cost
+      .plan--list
+        each item in planItem.list
+          +plan-list-item(item)
+    .plan--choise(data-class="flex-column")
+      .plan--cost(data-class="font-medium")
+        = planItem.cost ? `$${planItem.cost} ` : 'Free'
+        if planItem.cost
+          span / mo
       +base-button-small('Select')(class="plan--button")

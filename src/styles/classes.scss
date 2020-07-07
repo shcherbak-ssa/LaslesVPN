@@ -27,7 +27,7 @@
 [data-class*="main-border"] {
   border: 2px solid $main-border-color;
 
-  &.is-active {
+  &:hover {
     border-color: $primary-color;
   }
 }

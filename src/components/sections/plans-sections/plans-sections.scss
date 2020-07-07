@@ -1,14 +1,22 @@
 
 .plans-sections {
   padding-top: 80px;
+  padding-bottom: 75px;
   
   &--header {
     margin-bottom: 20px;
   }
   &--paragraph {
-    margin-bottom: 60px;
+    margin: 0 auto 60px;
+    width: 555px;
   }
   &--header, &--paragraph {
     text-align: center;
   }
+  &--container {
+    padding: 0 25px;
+  }
 }
+
+/** plan component */
+@import './plan/plan.scss';

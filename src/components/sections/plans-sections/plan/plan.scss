@@ -1,6 +1,36 @@
 
+$plan-cost-color: $main-header-color;
+$plan-cost-span-color: $main-text-color;
+
 .plan {
-  display: flex;
+  flex-direction: column;
   padding: 80px 0 50px;
   -short-size: 330px 760px;
+
+  &--description {
+    align-items: center;
+  }
+  &--image, &--header {
+    margin-bottom: 30px;
+  }
+  &--cost {
+    color: $plan-cost-color;
+    font-size: 25px;
+    margin-bottom: 20px;
+
+    span {
+      color: $plan-cost-span-color;
+      font-family: 'rubik-reqular';
+    }
+  }
+  &--header, &--cost {
+    text-align: center;
+  }
+  &--button {
+    border-width: 2px;
+    width: 177px;
+  }
 }
+
+/** plan-list-item component */
+@import './plan-list-item/plan-list-item.scss';
