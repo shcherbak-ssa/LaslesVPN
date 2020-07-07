@@ -5,6 +5,11 @@ $devider-bgcolor: #EEEFF2;
   background: $devider-bgcolor;
   -short-size: 2px 125px;
 
+  @media screen and (max-width: 768px) {
+    margin-bottom: 40px;
+    -short-size: 180px 2px;
+  }
+
   &:last-child {
     display: none;
   }

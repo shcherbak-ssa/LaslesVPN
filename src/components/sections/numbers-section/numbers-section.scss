@@ -2,12 +2,21 @@
 $design-section-width: 1440;
 $design-padding: 90;
 
+$padding: $design-padding/$design-section-width * 100%;
+
 .numbers-section {
   background: #ffffff;
   box-shadow: 0 30px 60px rgba(13, 16, 37, 0.2);
   height: 200px;
-  padding: 0 ($design-padding/$design-section-width * 100%);
+  padding: 0 $padding;
   position: relative;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    margin: 0 auto;
+    padding: $padding 0;
+    -short-size: 300px auto;
+  }
 }
 
 /** devider component */
