@@ -9,9 +9,29 @@
     display: flex;
     justify-content: flex-end;
     position: relative;
+
+    @media screen and (max-width: 1200px) {
+      //justify-content: flex-start;
+    }
   }
   &--illustration {
+    z-index: -1;
     -short-position: absolute x x 0 34px;
+
+    @media screen and (max-width: 1270px) {
+      left: 0;
+    }
+    @media screen and (max-width: 1200px) {
+      transform: translateX(-10%);
+    }
+    @media screen and (max-width: 1150px) {
+      transform: translateX(-20%);
+    }
+  }
+  &--content {
+    @media screen and (max-width: 1024px) {
+      width: 45%;
+    }
   }
   &--header {
     margin-bottom: 20px;
@@ -20,6 +40,12 @@
   &--paragraph {
     margin-bottom: 20px;
     width: 427px;
+  }
+
+  &--header, &--paragraph {
+    @media screen and (max-width: 1024px) {
+      width: auto;
+    }
   }
 }
 
