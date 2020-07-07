@@ -1,0 +1,24 @@
+
+//- assets
+-
+  let featureList = [
+    'Powerfull online protection.',
+    'Internet without borders.',
+    'Supercharged VPN.',
+    'No specific time limits.'
+  ];
+
+//- components
+include ./feature-list/feature-list.pug
+
+//- component
+mixin features-section()
+  +base-section-container('features-section')
+    .features-section--container(data-class="w100")
+      img.features-section--illustration(src="assets/images/feature-man.png")
+      .features-section--content
+        +base-header-level-2('We Provide Many Features You Can Use')(class="features-section--header")
+        +base-paragraph(
+          'You can explore the features that we provide with fun and have their own functions each feature.'
+          )(class="features-section--paragraph")
+        +feature-list(featureList)(class="features-section--list")

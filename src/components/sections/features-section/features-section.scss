@@ -1,0 +1,27 @@
+
+.features-section {
+  padding: {
+    top: 150px;
+    bottom: 130px
+  };
+
+  &--container {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+  }
+  &--illustration {
+    -short-position: absolute x x 0 34px;
+  }
+  &--header {
+    margin-bottom: 20px;
+    width: 380px;
+  }
+  &--paragraph {
+    margin-bottom: 20px;
+    width: 427px;
+  }
+}
+
+/** features-list component */
+@import './feature-list/feature-list.scss';

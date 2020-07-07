@@ -1,0 +1,17 @@
+
+$feature-text-color: $main-text-color;
+
+.feature-list {
+
+  &--item {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  &--icon {
+    margin-right: 10px;
+  }
+  &--text {
+    color: $feature-text-color;
+    font-size: 14px;
+  }
+}

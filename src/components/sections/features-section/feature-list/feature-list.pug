@@ -1,0 +1,10 @@
+
+- let featureIcon = 'assets/icons/list-mark.svg';
+
+mixin feature-list(featureList)
+  .feature-list
+    each item in featureList
+      .feature-list--item
+        img.feature-list--icon(src=featureIcon)
+        .feature-list--text= item
+    
