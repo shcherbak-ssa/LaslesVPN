@@ -67,7 +67,7 @@ const webpackConfig = ({isDev}) => {
     plugins: [
       new HtmlWebpackPlugin({
         favicon: joinPaths(SRC_DIRNAME, 'assets', 'favicon.ico'),
-        template: joinPaths(SRC_DIRNAME, 'views', 'index.pug')
+        template: joinPaths(SRC_DIRNAME, 'index.pug')
       }),
       new MiniCssExtractPlugin({
         filename: '[name].css'
