@@ -1,0 +1,14 @@
+
+.plans-sections {
+  padding-top: 80px;
+  
+  &--header {
+    margin-bottom: 20px;
+  }
+  &--paragraph {
+    margin-bottom: 60px;
+  }
+  &--header, &--paragraph {
+    text-align: center;
+  }
+}

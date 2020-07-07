@@ -1,0 +1,19 @@
+
+//- assets
+-
+  let planItems = [
+    { icon: '', name: 'Free Plan',  }
+  ]
+
+//- components
+include ./plan/plan.pug
+
+//- component
+mixin plans-sections()
+  +base-section-container('plans-sections')
+    +base-header-level-2('Choose Your Plan')(class="plans-sections--header")
+    +base-paragraph(
+     'Let\'s choose the package that is best for you and explore it happily and cheerfully.'
+     )(class="plans-sections--paragraph")
+    .plans-sections--container(data-class="box-sizing flex-between")
+
