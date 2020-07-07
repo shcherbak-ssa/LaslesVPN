@@ -55,10 +55,6 @@
     -short-position: absolute 43.5px -67px x x;
 
     &::after {
-      background: rgba(255, 255, 255, 0.3);
-      -short-position: absolute 0 x x 0;
-      @include psevdo-element;
-
       @media screen and (max-width: 1150px) {
         -short-size: 100%;
       }

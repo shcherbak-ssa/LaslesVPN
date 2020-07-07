@@ -2,4 +2,8 @@
 .base-header-level-2 {
   color: $main-header-color;
   font-size: 35px;
+
+  @media screen and (max-width: 470px) {
+    font-size: 28px;
+  }
 }

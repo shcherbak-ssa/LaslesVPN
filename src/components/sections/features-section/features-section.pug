@@ -14,8 +14,9 @@ include ./feature-list/feature-list.pug
 //- component
 mixin features-section()
   +base-section-container('features-section')
-    .features-section--container(data-class="w100")
-      img.features-section--illustration(src="assets/images/feature-man.png")
+    .features-section--container(data-class="w100 box-sizing")
+      .features-section--illustration(data-class="illustration-opacity")
+
       .features-section--content
         +base-header-level-2('We Provide Many Features You Can Use')(class="features-section--header")
         +base-paragraph(
