@@ -7,8 +7,32 @@ $plan-cost-span-color: $main-text-color;
   padding: 80px 0 50px;
   -short-size: 330px 760px;
 
+  @media screen and (max-width: 1360px) {
+    display: block;
+    padding: 40px;
+    -short-size: 600px auto;
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+
   &--description {
     align-items: center;
+
+    @media screen and (max-width: 1360px) {
+      flex-direction: row;
+      justify-content: space-around;
+      margin-bottom: 60px;
+    }
+  }
+  &--image {
+    @media screen and (max-width: 580px) {
+      display: none;
+    }
   }
   &--image, &--header {
     margin-bottom: 30px;
@@ -29,6 +53,10 @@ $plan-cost-span-color: $main-text-color;
   &--button {
     border-width: 2px;
     width: 177px;
+
+    @media screen and (max-width: 1360px) {
+      margin: 0 auto;
+    }
   }
 }
 

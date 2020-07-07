@@ -5,6 +5,10 @@
     bottom: 130px
   };
 
+  @media screen and (max-width: 580px) {
+    padding-bottom: 80px;
+  }
+
   &--container {
     display: flex;
     justify-content: flex-end;

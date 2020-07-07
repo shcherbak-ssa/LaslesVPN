@@ -9,12 +9,23 @@
   &--paragraph {
     margin: 0 auto 60px;
     width: 555px;
+
+    @media screen and (max-width: 768px) {
+      width: 100%;
+    }
   }
   &--header, &--paragraph {
     text-align: center;
   }
   &--container {
     padding: 0 25px;
+
+    @media screen and (max-width: 1360px) {
+      flex-direction: column;
+    }
+    @media screen and (max-width: 425px) {
+      padding: 0;
+    }
   }
 }
 

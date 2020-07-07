@@ -10,10 +10,11 @@ mixin plan(planItem)
   .plan(data-class="main-radius main-border box-sizing flex-between")
     .plan--description(data-class="flex-column")
       img.plan--image(src=planImage)
-      +base-header-level-3(planItem.header)(class="plan--header")
-      .plan--list
-        each item in planItem.list
-          +plan-list-item(item)
+      .plan--content
+        +base-header-level-3(planItem.header)(class="plan--header")
+        .plan--list
+          each item in planItem.list
+            +plan-list-item(item)
     .plan--choise(data-class="flex-column")
       .plan--cost(data-class="font-medium")
         = planItem.cost ? `$${planItem.cost} ` : 'Free'
