@@ -7,7 +7,7 @@ mixin header()
   header#header.header(
     data-class="flex-between box-sizing site-content-center"
   )
-    +base-logo()
+    +base-logo()(class="header--logo")
     +burger-button()(class="header--burger-button")
     +nav()(class="header--nav")
     +sing-buttons()(class="header--sing-buttons")

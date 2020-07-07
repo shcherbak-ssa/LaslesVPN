@@ -12,6 +12,14 @@
       top: 30px;
     };
   }
+
+  &--logo {
+    transition: .4s;
+    
+    .header.is-menu-open & {
+      opacity: 0;
+    }
+  }
 }
 
 /** burger-button component */
