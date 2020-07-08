@@ -12,13 +12,17 @@ $design-width: 1440;
   &--header {
     margin-bottom: 20px;
     width: 380px;
+
+    @media screen and (max-width: 560px) {
+      width: 100%;
+    }
   }
   &--paragraph {
     margin-bottom: 155px;
     width: 555px;
 
     @media screen and (max-width: 1023px) {
-      margin-bottom: 100px;
+      margin-bottom: 80px;
     }
     @media screen and (max-width: 767px) {
       width: 100%;
