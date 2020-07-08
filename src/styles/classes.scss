@@ -126,3 +126,15 @@
     @include psevdo-element;
   }
 }
+
+/** sections */
+.plans, .map, .testimonials {
+  &-section--header, &-section--paragraph {
+    text-align: center;
+    margin: {
+      left: auto;
+      right: auto;
+      bottom: 20px;
+    };
+  }
+}

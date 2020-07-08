@@ -3,19 +3,13 @@
   padding-top: 80px;
   padding-bottom: 75px;
   
-  &--header {
-    margin-bottom: 20px;
-  }
   &--paragraph {
-    margin: 0 auto 60px;
+    margin-bottom: 60px;
     width: 555px;
 
     @media screen and (max-width: 768px) {
       width: 100%;
     }
-  }
-  &--header, &--paragraph {
-    text-align: center;
   }
   &--container {
     padding: 0 25px;

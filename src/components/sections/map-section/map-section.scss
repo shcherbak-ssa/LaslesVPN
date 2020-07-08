@@ -10,7 +10,6 @@ $design-width: 1440;
   };
 
   &--header {
-    margin-bottom: 20px;
     width: 380px;
 
     @media screen and (max-width: 560px) {
@@ -27,13 +26,6 @@ $design-width: 1440;
     @media screen and (max-width: 767px) {
       width: 100%;
     }
-  }
-  &--header, &--paragraph {
-    text-align: center;
-    margin: {
-      left: auto;
-      right: auto;
-    };
   }
   &--map {
     $map-width: $design-map-width/$design-width * 100vw;
