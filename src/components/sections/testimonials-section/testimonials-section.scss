@@ -4,6 +4,11 @@
     top: 25px;
     bottom: 180px;
   };
+  position: relative;
+
+  @media screen and (max-width: 1023px) {
+    padding-bottom: 280px;
+  }
 
   &--header {
     width: 447px;

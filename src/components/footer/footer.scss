@@ -10,6 +10,10 @@ $footer-bgcolor: #F8F8F8;
       bottom: 100px
     };
 
+    @media screen and (max-width: 1023px) {
+      padding-top: 280px;
+    }
+
     @media screen and (max-width: 900px) {
       flex-direction: column;
       align-items: flex-start;
