@@ -1,6 +1,16 @@
 
 .sponsors-section {
+  padding-bottom: 25px;
+
   &--container {
     height: 210px;
+
+    @media screen and (max-width: 1439px) {
+      flex-wrap: wrap;
+      height: auto;
+    }
+  }
+  &--image {
+    margin: 20px;
   }
 }
