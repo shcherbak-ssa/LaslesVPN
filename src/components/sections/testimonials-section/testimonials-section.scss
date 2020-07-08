@@ -11,6 +11,11 @@
   &--paragraph {
     margin-bottom: 60px;
   }
+  &--header, &--paragraph {
+    @media screen and (max-width: 767px) {
+      width: 100%;
+    }
+  }
 }
 
 /** slider component */

@@ -1,0 +1,14 @@
+
+mixin slide(slide)
+  - let avatar = `assets/images/${slide.avatar}.png`;
+  .slide(data-class="main-border main-radius box-sizing")
+    .slide--head(data-class="w100 flex-between")
+      .slide--customer
+        img.slide--avatar(src=avatar)
+        .slide--data
+          .slide--name(data-class="font-medium")= slide.name
+          .slide--location= slide.location
+      .slide--assessment
+        .slide--number 4.5
+        img.slide--star(src="assets/icons/star.svg")
+    .slide--body(data-class="w100")= slide.body

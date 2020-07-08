@@ -2,13 +2,34 @@
 //- assets
 -
   let slides = [
-    {},
-    {},
-    {},
-    {}
+    {
+      avatar: 'customer-robert',
+      name: 'Viezh Robert',
+      location: 'Warsaw, Poland',
+      body: '“Wow... I am very happy to use this VPN, it turned out to be more than my expectations and so far there have been no problems. LaslesVPN always the best”.'
+    },
+    {
+      avatar: 'customer-christy',
+      name: 'Yessica Christy',
+      location: 'Shanxi, China',
+      body: '“I like it because I like to travel far and still can connect with high speed.”.'
+    },
+    {
+      avatar: 'customer-jou',
+      name: 'Kim Young Jou',
+      location: 'Seoul, South Korea',
+      body: '“This is very unusual for my business that currently requires a virtual private network that has high security.”.'
+    },
+    {
+      avatar: 'customer-robert',
+      name: 'Yessica Robert',
+      location: 'Minsk, Belarus',
+      body: '“Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur, nulla.”'
+    }
   ];
 
 //- components
+include ./slide/slide.pug
 include ./slide-index/slide-index.pug
 include ./slide-button/slide-button.pug
 
@@ -16,6 +37,8 @@ include ./slide-button/slide-button.pug
 mixin slider()
   .slider(class=attributes.class, data-class="w100")
     .slider--slides
+      each slide in slides
+        +slide(slide)
     .slider--indexes
       each it, index in slides
         +slide-index(index)

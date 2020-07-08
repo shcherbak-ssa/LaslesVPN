@@ -7,6 +7,12 @@
     display: flex;
     position: absolute;
   }
+  &--slides {
+    @media screen and (max-width: 500px) {
+      display: block;
+      width: 100%;
+    } 
+  }
   &--indexes {
     left: 0;
     bottom: 22.5px;
@@ -16,6 +22,9 @@
     bottom: 0;
   }
 }
+
+/** slide component */
+@import './slide/slide.scss';
 
 /** slide-index component */
 @import './slide-index/slide-index.scss';

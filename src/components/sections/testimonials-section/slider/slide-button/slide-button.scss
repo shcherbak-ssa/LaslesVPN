@@ -4,7 +4,6 @@ $slide-button-border-color: $primary-color;
 .slide-button {
   background: #fff;
   border: 2px solid $slide-button-border-color;
-  margin-left: 20px;
   transition: .4s;
   -short-size: 60px;
 
@@ -21,5 +20,8 @@ $slide-button-border-color: $primary-color;
   }
   &:last-child {
     transform: rotate(180deg);
+  }
+  &:not(:first-child) {
+    margin-left: 20px;
   }
 }
