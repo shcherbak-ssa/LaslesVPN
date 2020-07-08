@@ -21,12 +21,15 @@ body {
   position: relative;
   //-short-size: 100vw x;
 }
-#site {
+.site {
   overflow-x: hidden;
   position: relative;
 }
-#reusable-components {
+.reusable-components {
   display: none;
+}
+.line-gradient {
+  background: linear-gradient(180deg, #F8F8F8 -45.04%, rgba(248, 248, 248, 0) 88.56%);
 }
 
 /** classes */
