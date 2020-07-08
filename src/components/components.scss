@@ -3,6 +3,7 @@
 @import './base/base-button-large/base-button-large.scss';
 @import './base/base-button-small/base-button-small.scss';
 @import './base/base-close-button/base-close-button.scss';
+@import './base/base-copyright/base-copyright.scss';
 @import './base/base-header-level-2/base-header-level-2.scss';
 @import './base/base-header-level-3/base-header-level-3.scss';
 @import './base/base-input/base-input.scss';
@@ -26,6 +27,9 @@
 @import './sections/map-section/map-section.scss';
 @import './sections/sponsors-section/sponsors-section.scss';
 @import './sections/testimonials-section/testimonials-section.scss';
+
+/** footer component */
+@import './footer/footer.scss';
 
 /** reusable components */
 @import './reusable/menu-bg/menu-bg.scss';

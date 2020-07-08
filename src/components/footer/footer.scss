@@ -1,0 +1,26 @@
+
+$footer-bgcolor: #F8F8F8;
+
+.footer {
+  background: $footer-bgcolor;
+  
+  &--container {
+    padding: {
+      top: 180px;
+      bottom: 100px
+    };
+  }
+  &--logo {
+    margin-bottom: 20px;
+  }
+  &--text {
+    color: $main-text-color;
+    font-size: 16px;
+    margin-bottom: 30px;
+    width: 340px;
+  }
+  &--social {
+    margin-bottom: 30px;
+    width: 140px;
+  }
+}
