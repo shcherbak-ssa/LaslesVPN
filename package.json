@@ -4,6 +4,7 @@
   "description": "Simple landing page site for my portfolio",
   "main": "index.js",
   "scripts": {
+    "test": "mocha",
     "dev": "webpack --env.isDev",
     "build": "webpack"
   },
@@ -23,9 +24,11 @@
     "@babel/preset-env": "^7.10.4",
     "autoprefixer": "^9.8.4",
     "babel-loader": "^8.1.0",
+    "chai": "^4.2.0",
     "css-loader": "^3.6.0",
     "html-webpack-plugin": "^4.3.0",
     "mini-css-extract-plugin": "^0.9.0",
+    "mocha": "^8.0.1",
     "node-sass": "^4.14.1",
     "postcss-loader": "^3.0.0",
     "postcss-short": "^5.0.0",
