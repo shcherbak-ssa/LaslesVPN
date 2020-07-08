@@ -44,6 +44,8 @@ $design-width: 1440;
       size: cover;
     };
     margin: 0 auto;
+    max-width: 1060px;
+    max-height: 539px;
     -short-size: $map-width $map-height;
   }
 }
