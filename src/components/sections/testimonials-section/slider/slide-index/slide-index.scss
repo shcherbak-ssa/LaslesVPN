@@ -1,0 +1,18 @@
+
+$slider-index-bgcolor: #DDE0E4;
+$slider-index-active-bgcolor: $primary-color;
+
+.slide-index {
+  background: $slider-index-bgcolor;
+  border-radius: 20px;
+  transition: .4s;
+  -short-size: 15px;
+
+  &:not(:last-child) {
+    margin-right: 15px;
+  }
+  &.is-active {
+    background: $slider-index-active-bgcolor;
+    width: 45px;
+  }
+}

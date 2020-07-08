@@ -1,0 +1,24 @@
+
+//- assets
+-
+  let slides = [
+    {},
+    {},
+    {},
+    {}
+  ];
+
+//- components
+include ./slide-index/slide-index.pug
+include ./slide-button/slide-button.pug
+
+//- component
+mixin slider()
+  .slider(class=attributes.class, data-class="w100")
+    .slider--slides
+    .slider--indexes
+      each it, index in slides
+        +slide-index(index)
+    .slider--buttons
+      +slide-button()(id="prev-button")
+      +slide-button()(id="next-button")

@@ -1,0 +1,24 @@
+
+.slider {
+  height: 350px;
+  position: relative;
+
+  &--slides, &--indexes, &--buttons {
+    display: flex;
+    position: absolute;
+  }
+  &--indexes {
+    left: 0;
+    bottom: 22.5px;
+  }
+  &--buttons {
+    right: 0;
+    bottom: 0;
+  }
+}
+
+/** slide-index component */
+@import './slide-index/slide-index.scss';
+
+/** slide-button component */
+@import './slide-button/slide-button.scss';

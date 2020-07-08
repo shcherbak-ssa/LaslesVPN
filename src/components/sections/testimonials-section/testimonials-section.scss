@@ -1,0 +1,17 @@
+
+.testimonials-section {
+  padding: {
+    top: 25px;
+    bottom: 180px;
+  };
+
+  &--header {
+    width: 447px;
+  }
+  &--paragraph {
+    margin-bottom: 60px;
+  }
+}
+
+/** slider component */
+@import './slider/slider.scss';
