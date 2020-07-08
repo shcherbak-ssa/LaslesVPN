@@ -1,0 +1,45 @@
+
+$design-map-width: 1060;
+$design-map-height: 539;
+$design-width: 1440;
+
+.map-section {
+  padding: {
+    top: 75px;
+    bottom: 30px;
+  };
+
+  &--header {
+    margin-bottom: 20px;
+    width: 380px;
+  }
+  &--paragraph {
+    margin-bottom: 155px;
+    width: 555px;
+
+    @media screen and (max-width: 1023px) {
+      margin-bottom: 100px;
+    }
+    @media screen and (max-width: 767px) {
+      width: 100%;
+    }
+  }
+  &--header, &--paragraph {
+    text-align: center;
+    margin: {
+      left: auto;
+      right: auto;
+    };
+  }
+  &--map {
+    $map-width: $design-map-width/$design-width * 100vw;
+    $map-height: $design-map-height/$design-width * 100vw;
+
+    background: {
+      image: url('assets/images/world-map.png');
+      size: cover;
+    };
+    margin: 0 auto;
+    -short-size: $map-width $map-height;
+  }
+}
