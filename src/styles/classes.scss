@@ -70,7 +70,10 @@
   -short-size: 100%;
 }
 
-// flexible
+// flexbox
+[data-class*="flex"] {
+  display: flex;
+}
 [data-class*="flex-center"] {
   display: flex;
   justify-content: center;

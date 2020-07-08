@@ -1,6 +1,41 @@
 
 //- assets
 - let socialIcons = ['facebook', 'twitter', 'instagram'];
+-
+  let linkLists = [
+    {
+      header: 'Product',
+      list: [
+        'Download',
+        'Pricing',
+        'Locations',
+        'Server',
+        'Countries',
+        'Blog'
+      ]
+    },
+    {
+      header: 'Engage',
+      list: [
+        'LaslesVPN ?',
+        'FAQ',
+        'Tutorials',
+        'About Us',
+        'Privacy Policy',
+        'Terms of Service'
+      ]
+    },
+    {
+      header: 'Earn Money',
+      list: [
+        'Affiliate',
+        'Become Partner'
+      ]
+    }
+  ];
+
+//- components
+include ./link-list/link-list.pug
 
 //- component
 mixin footer()
@@ -14,4 +49,7 @@ mixin footer()
           each icon in socialIcons
             +base-social-icon(icon)
         +base-copyright()
-      .footer--links
+      .footer--link-lists(data-class="flex")
+        each list in linkLists
+          +link-list(list)
+        
