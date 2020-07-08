@@ -29,13 +29,13 @@
 include ./plan/plan.pug
 
 //- component
-mixin plans-sections()
-  +base-section-container('plans-sections')
-    +base-header-level-2('Choose Your Plan')(class="plans-sections--header")
+mixin plans-section()
+  +base-section-container('plans-section')
+    +base-header-level-2('Choose Your Plan')(class="plans-section--header")
     +base-paragraph(
      'Let\'s choose the package that is best for you and explore it happily and cheerfully.'
-     )(class="plans-sections--paragraph")
-    .plans-sections--container(data-class="box-sizing flex-between")
+     )(class="plans-section--paragraph")
+    .plans-section--container(data-class="box-sizing flex-between")
       each item in planItems
         +plan(item)
         
