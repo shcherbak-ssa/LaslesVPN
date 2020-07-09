@@ -3,12 +3,12 @@
 /** imports */
 import $ from './search';
 import Cut from './cut';
-import query from './query';
+import Query from './query';
 import cloneComponent from './clone';
 
 /** init */
 $.cut = new Cut();
-$.query = query;
+$.query = new Query();
 $.clone = cloneComponent;
 
 /** exports */
