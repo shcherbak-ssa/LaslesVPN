@@ -16,8 +16,15 @@ class Subscribe {
   _subscribeHandler() {
     events.emit('open-popup', {
       name: this._modalName,
+      openCallback: this._subscribeOpenCallback,
+      closeCallback: this._subscribeCloseCallback
     });
   }
+  _subscribeOpenCallback(popup) {
+    const input = popup.$('.base-input');
+    events.emit('set-input-events', input);
+  }
+  _subscribeCloseCallback() {}
 }
 
 /** export */

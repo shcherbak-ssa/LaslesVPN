@@ -28,9 +28,20 @@ const actions = {
       return this._classes.remove($.cut.firstElement(what))
     }
   },
+  focus() {
+    this._el.focus();
+  },
+  get(what) {
+    if( this._isAttribute(what) ) {
+      return this._el.getAttribute($.cut.firstElement(what));
+    }
+  },
   /** private methods */
   _isClassName(string) {
     return string.startsWith('.');
+  },
+  _isAttribute(string) {
+    return string.startsWith(':')
   }
 };
 

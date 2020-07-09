@@ -6,6 +6,7 @@ import Header from './modules/header';
 import Popup from './modules/popup';
 import Buttons from './modules/buttons';
 import Subscribe from './modules/subscribe';
+import Inputs from './modules/inputs';
 
 const header = new Header();
 header.init();
@@ -18,3 +19,6 @@ buttons.initEvents();
 
 const subscribe = new Subscribe();
 subscribe.initEvents();
+
+const inputs = new Inputs();
+inputs.initEvents();
