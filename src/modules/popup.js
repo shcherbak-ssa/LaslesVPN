@@ -8,6 +8,7 @@ import events from './events';
 class Popup {
   constructor() {
     this._popup = $('#popup');
+    this._popupBg = this._popup.$('.popup--bg');
     this._popupContainer = this._popup.$('.popup--container');
     this._popupCloseButton = this._popup.$('.popup--close-button');
     this._currentModal = null;
@@ -25,8 +26,10 @@ class Popup {
   // handlers
   _popupOpenHandler(popup) {
     this._popup.add('.is-open');
-    this._popupCloseButton.on('click', this._closeButtonClickHandler);
     $.body.block();
+
+    this._popupCloseButton.on('click', this._closePopupHandler);
+    this._popupBg.on('click', this._closePopupHandler);
   
     if( popup ) {
       const modalComponent = $.clone(popup.name);
@@ -39,7 +42,9 @@ class Popup {
   _popupCloseHandler() {
     this._popup.add('.is-close');
     this._popup.remove('.is-open');
-    this._popupCloseButton.off('click', this._closeButtonClickHandler);
+
+    this._popupCloseButton.off('click', this._closePopupHandler);
+    this._popupBg.off('click', this._closePopupHandler);
   
     setTimeout(() => {
       this._popup.remove('.is-close');
@@ -53,7 +58,7 @@ class Popup {
       }
     }, 200);
   }
-  _closeButtonClickHandler() {
+  _closePopupHandler() {
     events.emit('close-popup');
   }
 
