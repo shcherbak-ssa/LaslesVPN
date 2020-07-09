@@ -8,8 +8,9 @@ const reusableComponents = $('#reusable-components');
 
 /** export */
 function getReusableComponent(name) {
-  const component = $.one(reusableComponents, `.${name}`);
-  return component.cloneNode(true);
+  const selector = `.${name}`;
+  const component = reusableComponents.$(selector);
+  return component.clone();
 }
 
 export default getReusableComponent;

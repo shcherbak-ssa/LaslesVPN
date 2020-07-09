@@ -1,33 +1,23 @@
 'use strict';
 
+/** imports */
+import Element from './element';
+import query from './query';
+
 /** search function */
-const $ = (element, selector) => {
-  if( selector ) return searchElements(element, selector)
-  
-  selector = element;
-  return searchElementsBySelector(selector);
+const $ = (selector, all = false) => {
+  return searchElementsBySelector(selector, all);
 };
-$.one = (element, selector) => {
-  return searchElement(element, selector);
-}
 
 /** help functions */
-function searchElementsBySelector(selector) {
-  const d = document;
+function searchElementsBySelector(selector, all) {
   switch( selector[0] ) {
     case '#':
-      return d.getElementById(selector.slice(1));
-    case '.':
-      return d.querySelectorAll(selector);
+      const foundElement = document.getElementById(selector.slice(1));
+      return Element.create(foundElement);
     default:
-      throw new Error(`Unknow selector ${selector}`)
+      return all ? query.allElements(selector) : query.firstElement(selector);
   }
-}
-function searchElement(element, selector) {
-  return element.querySelector(selector);
-}
-function searchElements(element, selector) {
-  return element.querySelectorAll(selector);
 }
 
 /** exports */
