@@ -13,15 +13,20 @@ class Buttons {
 
   /** public methods */
   initEvents() {
-    this._buttons.forEach((button) => {
-      button.on('click', this._buttonClickHandler.bind(this))
-    })
+    this._buttons.forEach((button) => this._setButtonClickHandler(button));
+    events.on('set-button-event', this._setButtonEventHandler.bind(this));
   }
 
   /** private methods */
+  _setButtonClickHandler(button) {
+    button.on('click', this._buttonClickHandler)
+  }
   _buttonClickHandler({target}) {
     const buttonClickEvent = target.dataset.button;
     events.emit(buttonClickEvent);
+  }
+  _setButtonEventHandler(button) {
+    this._setButtonClickHandler(button);
   }
 }
 
