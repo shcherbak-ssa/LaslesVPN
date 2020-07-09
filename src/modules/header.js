@@ -2,7 +2,6 @@
 
 /** imports */
 import $ from './tools';
-import events from './events';
 
 /** header class */
 class Header {
@@ -24,12 +23,12 @@ class Header {
     this._header.toggle('.is-menu-open');
 
     if( this._header.contains('.is-menu-open') ) {
-      const position = {top, left};
-      events.emit('open-popup', {position});
+      $.body.block();
+      
       this._menuBgComponent.styles({
         top: top + 'px',
         left: left + 'px'
-      })
+      });
       this._header.append(this._menuBgComponent);
 
       if( this._isWindowWithTabletWidth() ) {
@@ -37,7 +36,8 @@ class Header {
       }
     } else {
       this._header.add('.is-menu-close');
-      events.emit('close-popup');
+      $.body.unblock();
+
       setTimeout(() => {
         this._header.$('.menu-bg').remove()
         this._header.remove('.is-menu-close');
@@ -45,7 +45,7 @@ class Header {
         if( this._isWindowWithTabletWidth() ) {
           this._signButtons.$('.subscribe').remove();
         }
-      }, 600)
+      }, 400)
     }
   }
   _isWindowWithTabletWidth() {

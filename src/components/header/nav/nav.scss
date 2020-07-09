@@ -1,7 +1,5 @@
 
 .nav {
-  display: flex;
-
   @media screen and (max-width: 1024px) {
     opacity: 0;
     flex-direction: column;
@@ -11,7 +9,7 @@
     -short-position: fixed 0 -100% x x;
 
     .header.is-menu-open & {
-      animation: nav-show .4s .3s forwards;
+      animation: nav-show .4s forwards;
     }
     .header.is-menu-close & {
       animation: nav-hide .4s forwards;

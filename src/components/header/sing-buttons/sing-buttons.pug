@@ -2,6 +2,6 @@
 mixin sing-buttons()
   .sing-buttons(class=attributes.class)
     +base-header-level-3('OR')(class="sing-buttons--header")
-    .sing-buttons--container
+    .sing-buttons--container(data-class="flex")
       .sing-buttons--singin(data-class="flex-center click font-medium") Sing In
       +base-button-small('Sing Up')

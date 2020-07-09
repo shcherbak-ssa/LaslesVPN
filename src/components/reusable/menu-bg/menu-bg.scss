@@ -1,14 +1,14 @@
 
 .menu-bg {
-  animation: menu-bg-show .6s .2s forwards;
-  background: #fff;
+  animation: menu-bg-show .4s forwards;
+  background: #fcfcfc;
   position: fixed;
   transform: translate(-50%, -50%);
   z-index: -1;
   -short-size: 10px;
 
   .header.is-menu-close & {
-    animation: menu-bg-hide .4s .2s forwards;
+    animation: menu-bg-hide .4s forwards;
     -short-size: 400vw;
   }
 }
