@@ -35,6 +35,9 @@
     @media screen and (min-width: 1800px) {
       display: none;
     }
+    @media screen and (max-width: 500px) {
+      bottom: 6px;
+    }
   }
 }
 

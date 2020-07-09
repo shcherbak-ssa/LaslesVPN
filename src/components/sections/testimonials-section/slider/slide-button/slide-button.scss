@@ -7,6 +7,10 @@ $slide-button-border-color: $primary-color;
   transition: .4s;
   -short-size: 60px;
 
+  @media screen and (max-width: 500px) {
+    -short-size: 48px;
+  }
+
   path {
     fill: $primary-color;
   }

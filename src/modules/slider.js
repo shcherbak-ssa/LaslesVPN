@@ -7,6 +7,7 @@ import Element from './element';
 /** constants */
 const limitPrevIndex = 0;
 const slideWidthAndMargin = 450;
+const mobileWidthPoint = 500;
 
 /** slider class */
 class Slider {
@@ -83,6 +84,7 @@ class Slider {
   _changeSlide(newActiveSlideIndex = 0) {
     this._updateActiveSlideIndex(newActiveSlideIndex);
     this._updateActiveClasses();
+    this._moveSlide();
   }
 
   // update
@@ -98,6 +100,19 @@ class Slider {
         if( itemIndex === this._activeSlideIndex ) item.add('.is-active');
       });
     })
+  }
+
+  // move slide
+  _moveSlide() {
+    this._isMobileWidth() ? this._moveSlideInMobile() : '';
+  }
+  _moveSlideInMobile() {
+    
+  }
+
+  // help methods
+  _isMobileWidth() {
+    return document.documentElement.clientWidth <= mobileWidthPoint;
   }
 }
 
