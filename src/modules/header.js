@@ -24,7 +24,8 @@ class Header {
     this._header.toggle('.is-menu-open');
 
     if( this._header.contains('.is-menu-open') ) {
-      events.emit('open-popup', {top, left});
+      const position = {top, left};
+      events.emit('open-popup', {position});
       this._menuBgComponent.styles({
         top: top + 'px',
         left: left + 'px'

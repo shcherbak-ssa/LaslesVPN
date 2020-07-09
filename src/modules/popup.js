@@ -9,6 +9,8 @@ class Popup {
   constructor() {
     this._popup = $('#popup');
     this._popupContainer = this._popup.$('.popup--container');
+    this._popupCloseButton = this._popup.$('.popup--close-button');
+    this._currentModal = null;
   }
 
   /** public methods */
@@ -19,16 +21,44 @@ class Popup {
   }
 
   /** private methods */
-  _popupOpenHandler(position, modalComponentName) {
+
+  // handlers
+  _popupOpenHandler({position, modal}) {
     this._popup.add('.is-open');
     this._popup.append(this._createPopupBgComponent(position));
+    this._popupCloseButton.on('click', this._closeButtonClickHandler);
     document.body.style.overflow = 'hidden';
   
-    if( modalComponentName ) {
-      const modal = $.clone(modalComponentName);
-      this._popupContainer.append(modal);
+    if( modal ) {
+      const modalComponent = $.clone(modal.name);
+      this._popupContainer.append(modalComponent);
+      this._togglePopupContainerClassname(modal.name);
+      this._currentModal = modal;
     }
   }
+  _popupCloseHandler() {
+    this._popup.remove('.is-open');
+    this._popup.add('.is-close');
+    this._popupCloseButton.off('click', this._closeButtonClickHandler);
+  
+    setTimeout(() => {
+      this._popup.remove('.is-close');
+      this._popup.$('.popup-bg').remove();
+      document.body.style.overflow = '';
+  
+      if( this._currentModal ) {
+        const modalClassName = this._currentModal.name;
+        this._popupContainer.$(`.${modalClassName}`).remove();
+        this._togglePopupContainerClassname(modalClassName);
+        this._currentModal = null;
+      }
+    }, 500);
+  }
+  _closeButtonClickHandler() {
+    events.emit('close-popup');
+  }
+
+  // help functions
   _createPopupBgComponent({top, left}) {
     const popupBgComponent = $.clone('popup-bg');
     popupBgComponent.styles({
@@ -37,19 +67,8 @@ class Popup {
     });
     return popupBgComponent;
   }
-  
-  _popupCloseHandler() {
-    const popupBg = this._popup.$('.popup-bg');
-    popupBg.add('.is-close');
-  
-    setTimeout(() => {
-      this._popup.remove('.is-open');
-      popupBg.remove();
-      document.body.style.overflow = '';
-  
-      const popupContainerFirstChild = this._popupContainer.getFirstChild();
-      if( popupContainerFirstChild ) popupContainerFirstChild.remove();
-    }, 900);
+  _togglePopupContainerClassname(className) {
+    this._popupContainer.toggle(`.popup--${className}-modal`);
   }
 }
 

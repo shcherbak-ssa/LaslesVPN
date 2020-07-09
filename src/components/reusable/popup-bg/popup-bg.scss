@@ -6,7 +6,7 @@
   transform: translate(-50%, -50%);
   -short-size: 10px;
 
-  &.is-close {
+  .popup.is-close & {
     animation: popup-bg-hide .4s .3s forwards;
     -short-size: 400vw;
   }
