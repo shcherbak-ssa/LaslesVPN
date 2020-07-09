@@ -10,8 +10,10 @@ class Query {
     return Element.create(firstFoundElement);
   }
   allElements(selector, element = document) {
+    const updatedElements = [];
     const allFoundElements = element.querySelectorAll(selector);
-    return allFoundElements.map((element) => Element.create(element));
+    allFoundElements.forEach((element) => updatedElements.push(Element.create(element)))
+    return updatedElements;
   }
 }
 

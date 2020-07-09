@@ -2,8 +2,7 @@
 
 /** imports */
 import $ from './tools';
-
-/** buttons handlers */
+import events from './events';
 
 /** buttons class */
 class Buttons {
@@ -21,7 +20,8 @@ class Buttons {
 
   /** private methods */
   _buttonClickHandler({target, clientX: left, clientY: top}) {
-    const dataButtonAttributeValue = ''
+    const dataButtonAttributeValue = target.dataset.button;
+    events.emit('open-popup', {top, left});
   }
 }
 

@@ -2,7 +2,10 @@
 
 /** imports */
 import Element from '../element';
-import query from './query';
+import Query from './query';
+
+/** constants */
+const query = new Query();
 
 /** search function */
 const $ = (selector, all = false) => {
