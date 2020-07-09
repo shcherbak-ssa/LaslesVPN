@@ -2,9 +2,10 @@
 $input-text-color: $main-header-color;
 $input-placeholder-color: rgba($main-header-color, 0.48);
 $input-icon-color: $main-header-color;
+$input-icon-success-color: #2FAB73;
+$input-icon-error-color: $primary-color;
 
 .base-input {
-  overflow: hidden;
   -short-size: 250px 60px;
 
   &.is-active::after {
@@ -12,6 +13,7 @@ $input-icon-color: $main-header-color;
   }
 
   &--input {
+    font-family: 'rubik-reqular', sans-serif;
     padding-left: 52px;
     -short-color: $input-text-color #fff;
 
@@ -21,29 +23,34 @@ $input-icon-color: $main-header-color;
   }
   &--icon {
     left: 18px;
+
+    path {
+      fill: $input-icon-color;
+
+      .base-input.is-success & {
+        fill: $input-icon-success-color;
+      }
+      .base-input.is-error & {
+        fill: $input-icon-error-color;
+      }
+    }
   }
   &--placeholder {
     color: $input-placeholder-color;
     left: 52px;
     transition: .4s;
   }
-  &--status {
-    right: 20px;
-  }
   &--error {
     color: $primary-color;
-    font: {
-      family: 'rubik-light';
-      size: 14px;
-    };
+    font-size: 14px;
     left: 20px;
-    bottom: -14px;
+    bottom: -20px;
   }
 
   &--input, &--placeholder {
     font-size: 16px;
   }
-  &--input, &--placeholder, &--icon, &--status, &--error {
+  &--input, &--placeholder, &--icon, &--error {
     position: absolute;
   }
 

@@ -22,7 +22,12 @@ class Element {
 
   /** public methods */
   $(selector, all = false) {
-    return all ? $.query.allElements(selector, this._el) : $.query.firstElement(selector, this._el);
+    return all
+      ? $.query.allElements(selector, this._el)
+      : $.query.firstElement(selector, this._el);
+  }
+  text(text) {
+    this._el.innerHTML = text;
   }
   getElement() {
     return this._el;

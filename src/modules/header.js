@@ -22,7 +22,7 @@ class Header {
   _burgerButtonClickHandler({clientX: left, clientY: top}) {
     this._header.toggle('.is-menu-open');
 
-    if( this._header.contains('.is-menu-open') ) {
+    if( this._header.has('.is-menu-open') ) {
       $.body.block();
       
       this._menuBgComponent.styles({
