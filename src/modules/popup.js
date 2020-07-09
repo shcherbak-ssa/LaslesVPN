@@ -35,8 +35,8 @@ class Popup {
       const modalComponent = $.clone(popup.name);
       this._popupContainer.append(modalComponent);
       this._togglePopupContainerClassname(popup.name);
-      popup.openCallback(this._popup);
       this._currentModal = popup;
+      popup.openCallback();
     }
   }
   _popupCloseHandler() {

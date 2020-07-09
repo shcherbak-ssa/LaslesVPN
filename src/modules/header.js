@@ -2,6 +2,7 @@
 
 /** imports */
 import $ from './tools';
+import events from './events';
 
 /** header class */
 class Header {
@@ -33,6 +34,7 @@ class Header {
 
       if( this._isWindowWithTabletWidth() ) {
         this._signButtons.prepend(this._subscribeComponent);
+        events.emit('init-subscribe-events');
       }
     } else {
       this._header.add('.is-menu-close');
