@@ -3,6 +3,7 @@
 /** imports */
 import $ from '../tools';
 import insert from './insert';
+import styles from './styles';
 
 /** element class */
 class Element {
@@ -52,12 +53,6 @@ class Element {
     }
   }
 
-  styles(styles) {
-    for( let [property, value] of Object.entries(styles) ) {
-      this._el.style[property] = value;
-    }
-  }
-
   getElement() {
     return this._el;
   }
@@ -69,7 +64,11 @@ class Element {
 }
 
 /** inheritance */
-Object.assign(Element.prototype, insert);
+const elementPrototype = Element.prototype;
+const inheritance = (object) => Object.assign(elementPrototype, object);
+
+inheritance(insert);
+inheritance(styles);
 
 /** export */
 export default Element;
