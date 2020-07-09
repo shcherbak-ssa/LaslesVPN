@@ -5,7 +5,6 @@ import $ from '../tools';
 import actions from './actions';
 import events from './events';
 import clone from './clone';
-import children from './children';
 import insert from './insert';
 import styles from './styles';
 
@@ -37,7 +36,6 @@ const inheritance = (object) => Object.assign(elementPrototype, object);
 inheritance(actions);
 inheritance(events);
 inheritance(clone);
-inheritance(children);
 inheritance(insert);
 inheritance(styles);
 
