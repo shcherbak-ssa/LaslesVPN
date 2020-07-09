@@ -2,10 +2,10 @@
 
 /** imports */
 import $ from './search';
-import getReusableComponent from './reusable';
+import cloneComponent from './clone';
 
 /** init */
-$.reusable = getReusableComponent;
+$.clone = cloneComponent;
 
 /** exports */
 export default $;

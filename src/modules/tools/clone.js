@@ -7,10 +7,10 @@ import $ from './search';
 const reusableComponents = $('#reusable-components');
 
 /** export */
-function getReusableComponent(name) {
+function cloneComponent(name) {
   const selector = `.${name}`;
   const component = reusableComponents.$(selector);
   return component.clone();
 }
 
-export default getReusableComponent;
+export default cloneComponent;

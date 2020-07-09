@@ -10,8 +10,8 @@ class Header {
     this._header = $('#header');
     this._burgerButton = this._header.$('.header--burger-button');
     this._signButtons = this._header.$('.header--sing-buttons');
-    this._menuBgComponent = $.reusable('menu-bg');
-    this._subscribeComponent = $.reusable('subscribe');
+    this._menuBgComponent = $.clone('menu-bg');
+    this._subscribeComponent = $.clone('subscribe');
   }
 
   /** public methods */
