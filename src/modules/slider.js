@@ -6,6 +6,7 @@ import Element from './element';
 
 /** constants */
 const limitPrevIndex = 0;
+const slideWidthAndMargin = 450;
 
 /** slider class */
 class Slider {
@@ -19,13 +20,14 @@ class Slider {
     this._activeSlideIndex = 0;
   }
 
+  /** public methods */
   init() {
     this._setIndexesClickEvents();
     this._setSlidesClickEvents();
     this._setPrevButtonClickEvent();
     this._setNextButtonClickEvent();
-    this._changeActiveSlide();
-    this._changeActiveSlideIndex();
+
+    this._changeSlide();
   }
 
   /** private methods */
@@ -50,50 +52,52 @@ class Slider {
 
   // handlers
   _indexClickHandler({target}) {
-    const currentIndex = Element.create(target);
-    const slideIndex = +currentIndex.get(':data-slide-index');
-    this._changeSlide(slideIndex);
+    this._changeSlideByClick(target);
   }
   _slideClickHandler({target}) {
-    const currentSlide = Element.create(target);
-    const slideIndex = +currentSlide.get(':data-slide-index');
-    this._changeSlide(slideIndex);
+    this._changeSlideByClick(target);
   }
   _prevButtonClickHandler() {
-    this._changeSlideFromButton(limitPrevIndex, this._activeSlideIndex - 1);
+    this._changeSlideByButtonClick(
+      limitPrevIndex,
+      this._activeSlideIndex - 1
+    );
   }
   _nextButtonClickHandler() {
-    this._changeSlideFromButton(this._slides.length - 1, this._activeSlideIndex + 1);
+    this._changeSlideByButtonClick(
+      this._slides.length - 1,
+      this._activeSlideIndex + 1
+    );
   }
 
-  // update
-  _changeSlideFromButton(indexLimit, newActiveSlideIndex) {
+  // change slide
+  _changeSlideByClick(element) {
+    const currentSlide = Element.create(element);
+    const newActiveSlideIndex = +currentSlide.get(':data-slide-index');
+    this._changeSlide(newActiveSlideIndex);
+  }
+  _changeSlideByButtonClick(indexLimit, newActiveSlideIndex) {
     if( this._activeSlideIndex === indexLimit ) return;
     this._changeSlide(newActiveSlideIndex);
   }
-  _changeSlide(newActiveSlideIndex) {
+  _changeSlide(newActiveSlideIndex = 0) {
     this._updateActiveSlideIndex(newActiveSlideIndex);
-    this._changeActiveSlide();
-    this._changeActiveSlideIndex();
+    this._updateActiveClasses();
   }
+
+  // update
   _updateActiveSlideIndex(newActiveSlideIndex) {
     this._activeSlideIndex = newActiveSlideIndex;
   }
-  _changeActiveSlide() {
-    this._slides.forEach(slide => {
-      slide.remove('.is-active');
-
-      const slideIndex = +slide.get(':data-slide-index');
-      if( slideIndex === this._activeSlideIndex ) slide.add('.is-active');
-    });
-  }
-  _changeActiveSlideIndex() {
-    this._indexes.forEach(item => {
-      item.remove('.is-active');
-
-      const itemIndex = +item.get(':data-slide-index');
-      if( itemIndex === this._activeSlideIndex ) item.add('.is-active');
-    });
+  _updateActiveClasses() {
+    [this._indexes, this._slides].map((array) => {
+      array.forEach((item) => {
+        item.remove('.is-active');
+  
+        const itemIndex = +item.get(':data-slide-index');
+        if( itemIndex === this._activeSlideIndex ) item.add('.is-active');
+      });
+    })
   }
 }
 
