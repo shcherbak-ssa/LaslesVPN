@@ -1,7 +1,8 @@
 
-mixin base-button-large(value)
+mixin base-button-large(value, event)
   .base-button-large(
     class=attributes.class,
     data-class="main-radius flex-center click"
+    data-button=event
   )= value
     .base-button-large--shadow(data-class="main-radius button-shadow")
