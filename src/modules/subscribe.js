@@ -13,12 +13,9 @@ class Subscribe {
   }
 
   /** private methods */
-  _subscribeHandler(position) {
+  _subscribeHandler() {
     events.emit('open-popup', {
-      position,
-      modal: {
-        name: this._modalName
-      }
+      name: this._modalName,
     });
   }
 }

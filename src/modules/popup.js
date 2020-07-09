@@ -23,28 +23,26 @@ class Popup {
   /** private methods */
 
   // handlers
-  _popupOpenHandler({position, modal}) {
+  _popupOpenHandler(popup) {
     this._popup.add('.is-open');
-    this._popup.append(this._createPopupBgComponent(position));
     this._popupCloseButton.on('click', this._closeButtonClickHandler);
-    document.body.style.overflow = 'hidden';
+    $.body.block();
   
-    if( modal ) {
-      const modalComponent = $.clone(modal.name);
+    if( popup ) {
+      const modalComponent = $.clone(popup.name);
       this._popupContainer.append(modalComponent);
-      this._togglePopupContainerClassname(modal.name);
-      this._currentModal = modal;
+      this._togglePopupContainerClassname(popup.name);
+      this._currentModal = popup;
     }
   }
   _popupCloseHandler() {
-    this._popup.remove('.is-open');
     this._popup.add('.is-close');
+    this._popup.remove('.is-open');
     this._popupCloseButton.off('click', this._closeButtonClickHandler);
   
     setTimeout(() => {
       this._popup.remove('.is-close');
-      this._popup.$('.popup-bg').remove();
-      document.body.style.overflow = '';
+      $.body.unblock();
   
       if( this._currentModal ) {
         const modalClassName = this._currentModal.name;
@@ -52,21 +50,13 @@ class Popup {
         this._togglePopupContainerClassname(modalClassName);
         this._currentModal = null;
       }
-    }, 500);
+    }, 200);
   }
   _closeButtonClickHandler() {
     events.emit('close-popup');
   }
 
   // help functions
-  _createPopupBgComponent({top, left}) {
-    const popupBgComponent = $.clone('popup-bg');
-    popupBgComponent.styles({
-      top: top + 'px',
-      left: left + 'px'
-    });
-    return popupBgComponent;
-  }
   _togglePopupContainerClassname(className) {
     this._popupContainer.toggle(`.popup--${className}-modal`);
   }

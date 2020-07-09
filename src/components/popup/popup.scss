@@ -17,10 +17,11 @@ $popup-bgcolor: rgba($main-header-color, 0.5);
     justify-content: center;
     align-items: center;
     opacity: 0;
+    overflow: hidden;
     z-index: 1;
 
     .popup.is-open & {
-      animation: show-container .2s .4s forwards;
+      animation: show-container .4s forwards;
     }
     .popup.is-close & {
       animation: hide-container .2s forwards;
@@ -31,18 +32,31 @@ $popup-bgcolor: rgba($main-header-color, 0.5);
 
     &::before {
       background: url('assets/images/subscribe-man.png') left bottom no-repeat;
+      z-index: -1;
       -short-size: 100%;
       @include psevdo-element;
+    }
+
+    @media screen and (max-width: 540px) {
+      padding: 10px;
+      width: 340px;
+    }
+    @media screen and (max-width: 360px) {
+      width: 300px;
     }
   }
   &--close-button {
     -short-position: absolute 20px 20px x x;
   }
+  &--bg {
+    background: $popup-bgcolor;
+    position: absolute;
+  }
 }
 
 @keyframes show-container {
   from {
-    top: 35%;
+    top: 40%;
     opacity: 0;
   }
   to {
@@ -56,7 +70,7 @@ $popup-bgcolor: rgba($main-header-color, 0.5);
     opacity: 1;
   }
   to {
-    top: 35%;
+    top: 40%;
     opacity: 0;
   }
 }

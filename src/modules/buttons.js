@@ -19,9 +19,9 @@ class Buttons {
   }
 
   /** private methods */
-  _buttonClickHandler({target, clientX: left, clientY: top}) {
+  _buttonClickHandler({target}) {
     const buttonClickEvent = target.dataset.button;
-    events.emit(buttonClickEvent, {top, left});
+    events.emit(buttonClickEvent);
   }
 }
 
