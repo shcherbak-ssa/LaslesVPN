@@ -1,7 +1,7 @@
 'use strict';
 
 /** imports */
-import query from './query';
+import $ from '../tools';
 
 /** element class */
 class Element {
@@ -17,7 +17,7 @@ class Element {
 
   /** public methods */
   $(selector, all = false) {
-    return all ? query.allElements(selector, this._el) : query.firstElement(selector, this._el);
+    return all ? $.query.allElements(selector, this._el) : $.query.firstElement(selector, this._el);
   }
   on(event, handler) {
     this._el.addEventListener(event, handler);
