@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/shcherbak-ssa/portfolio-LaslesVPN.git"
+    "url": "git+https://github.com/shcherbak-ssa/LaslesVPN.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/shcherbak-ssa/portfolio-LaslesVPN/issues"
+    "url": "https://github.com/shcherbak-ssa/LaslesVPN/issues"
   },
-  "homepage": "https://github.com/shcherbak-ssa/portfolio-LaslesVPN#readme",
+  "homepage": "https://github.com/shcherbak-ssa/LaslesVPN#readme",
   "devDependencies": {
     "@babel/core": "^7.10.4",
     "@babel/plugin-proposal-class-properties": "^7.10.4",
