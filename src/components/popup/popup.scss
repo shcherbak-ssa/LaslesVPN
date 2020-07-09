@@ -10,4 +10,8 @@ $popup-bgcolor: rgba($main-header-color, 0.5);
   &.is-open {
     display: block;
   }
+
+  &--container {
+    background: #fff;
+  }
 }

@@ -24,7 +24,7 @@ class Header {
     this._header.toggle('.is-menu-open');
 
     if( this._header.contains('.is-menu-open') ) {
-      //events.emit('open-popup', {top, left});
+      events.emit('open-popup', {top, left});
       this._menuBgComponent.styles({
         top: top + 'px',
         left: left + 'px'
@@ -36,7 +36,7 @@ class Header {
       }
     } else {
       this._header.add('.is-menu-close');
-      //events.emit('close-popup');
+      events.emit('close-popup');
       setTimeout(() => {
         this._header.$('.menu-bg').remove()
         this._header.remove('.is-menu-close');
