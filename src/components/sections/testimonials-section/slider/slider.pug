@@ -35,7 +35,7 @@ include ./slide-button/slide-button.pug
 
 //- component
 mixin slider()
-  .slider(class=attributes.class, data-class="w100")
+  #slider.slider(class=attributes.class, data-class="w100")
     .slider--slides
       each slide in slides
         +slide(slide)
