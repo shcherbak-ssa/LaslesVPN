@@ -29,17 +29,17 @@ class Element {
 
   contains(what) {
     if( this._isClassName(what) ) {
-      return this._classes.contains(this._cutFirstElement(what))
+      return this._classes.contains($.cut.firstElement(what))
     }
   }
   toggle(what) {
     if( this._isClassName(what) ) {
-      return this._classes.toggle(this._cutFirstElement(what))
+      return this._classes.toggle($.cut.firstElement(what))
     }
   }
   add(what) {
     if( this._isClassName(what) ) {
-      return this._classes.add(this._cutFirstElement(what))
+      return this._classes.add($.cut.firstElement(what))
     }
   }
   remove(what) {
@@ -47,7 +47,7 @@ class Element {
       return this._el.remove();
     }
     if( this._isClassName(what) ) {
-      return this._classes.remove(this._cutFirstElement(what))
+      return this._classes.remove($.cut.firstElement(what))
     }
   }
 
@@ -71,9 +71,6 @@ class Element {
   /** private methods */
   _isClassName(string) {
     return string.startsWith('.');
-  }
-  _cutFirstElement(string) {
-    return string.slice(1);
   }
 }
 
