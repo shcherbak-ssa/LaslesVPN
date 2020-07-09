@@ -1,7 +1,7 @@
 'use strict';
 
 /** imports */
-import $ from '../tools';
+import $ from './tools';
 import events from './events';
 
 /** header class */
