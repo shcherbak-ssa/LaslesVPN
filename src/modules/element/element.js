@@ -3,6 +3,7 @@
 /** imports */
 import $ from '../tools';
 import actions from './actions';
+import events from './events';
 import clone from './clone';
 import insert from './insert';
 import styles from './styles';
@@ -23,10 +24,6 @@ class Element {
   $(selector, all = false) {
     return all ? $.query.allElements(selector, this._el) : $.query.firstElement(selector, this._el);
   }
-  on(event, handler) {
-    this._el.addEventListener(event, handler);
-  }
-
   getElement() {
     return this._el;
   }
@@ -37,6 +34,7 @@ const elementPrototype = Element.prototype;
 const inheritance = (object) => Object.assign(elementPrototype, object);
 
 inheritance(actions);
+inheritance(events);
 inheritance(clone);
 inheritance(insert);
 inheritance(styles);
