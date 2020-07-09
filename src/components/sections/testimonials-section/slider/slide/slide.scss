@@ -15,6 +15,11 @@
     }
   }
 
+  &.is-active {
+    border-color: $primary-color;
+    box-shadow: 0 30px 60px rgba(13, 16, 37, 0.2);
+  }
+
   &--head {
     margin-bottom: 20px;
   }

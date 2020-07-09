@@ -120,6 +120,8 @@
 
   &::after {
     border-radius: inherit;
+    top: 0;
+    left: 0;
     -short-size: 100%;
     @include psevdo-element;
   }

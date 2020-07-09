@@ -1,7 +1,7 @@
 
-mixin slide(slide)
+mixin slide(slide, index)
   - let avatar = `assets/images/${slide.avatar}.png`;
-  .slide(data-class="main-border main-radius box-sizing")
+  .slide(data-class="click main-border main-radius box-sizing", data-slide-index=index)
     .slide--head(data-class="w100 flex-between")
       .slide--customer
         img.slide--avatar(src=avatar)
