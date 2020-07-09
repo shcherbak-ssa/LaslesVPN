@@ -2,6 +2,7 @@
 
 /** imports */
 import $ from '../tools';
+import insert from './insert';
 
 /** element class */
 class Element {
@@ -57,13 +58,6 @@ class Element {
     }
   }
 
-  append(element) {
-    this._el.append(element.getElement());
-  }
-  prepend(element) {
-    this._el.prepend(element.getElement());
-  }
-
   getElement() {
     return this._el;
   }
@@ -73,6 +67,9 @@ class Element {
     return string.startsWith('.');
   }
 }
+
+/** inheritance */
+Object.assign(Element.prototype, insert);
 
 /** export */
 export default Element;
