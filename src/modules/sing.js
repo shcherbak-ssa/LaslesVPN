@@ -3,6 +3,8 @@
 /** imports */
 import $ from './tools';
 import events from './events';
+import SingForm from './sing-form';
+
 import singData from '../data/sing-data.json';
 
 /** sign class */
@@ -10,7 +12,8 @@ class Sing {
   constructor() {
     this._singFrame = $('#sing-frame');
     this._closeButton = this._singFrame.$('.sing-frame--close-button');
-    this._inllustration = this._singFrame.$('.sing-frame--illustration');
+
+    this._singForm = new SingForm(this._singFrame);
 
     this._singData = singData;
     this._currentSignType = '';
@@ -26,47 +29,76 @@ class Sing {
 
   // handlers
   _singInEventHandler() {
-    this._updateCurrentSignType('sing-in');
-    this._setCloseButtonEvent();
-    this._showSingFrame();
+    this._showSingFrame('sing-in');
   }
   _singUpEventHandler() {
-    this._updateCurrentSignType('sing-up');
-    this._setCloseButtonEvent();
-    this._showSingFrame();
+    this._showSingFrame('sing-up');
   }
-
-  // events
-  _setCloseButtonEvent() {
-    this._closeButton.on('click', this._hideSignFrame.bind(this));
+  _changeSingEventHandler(type) {
+    this._removeCurrentSingTypeClass();
+    this._updateCurrentSignType(type);
+    this._addCurrentSingTypeClass();
+    this._updateSingForm();
   }
-  _removeCloseButtonEvent() {
-    this._closeButton.off('click', this._hideSignFrame.bind(this));
+  _closeButtonClickHandler() {
+    this._hideSignFrame();
+    this._removeChangeSingEvent();
+    this._removeCloseButtonClickEvent();
+    this._singForm.removeSingFormEvents();
   }
 
   // view
-  _showSingFrame() {
-    this._singFrame.add(`.is-${this._currentSignType}`);
-    this._updateIllustrationImage();
+  _showSingFrame(type) {
+    this._updateCurrentSignType(type);
+    this._addCurrentSingTypeClass();
+    this._updateSingForm();
+
+    this._setSingFrameEvents();
   }
   _hideSignFrame() {
-    this._singFrame.remove(`.is-${this._currentSignType}`);
-    this._removeCloseButtonEvent();
+    this._removeCurrentSingTypeClass();
+  }
+
+  // events
+  _setSingFrameEvents() {
+    this._setCloseButtonClickEvent();
+    this._singForm.setSingFormEvents();
+
+    this._setChangeSingEvent();
+  }
+  _setCloseButtonClickEvent() {
+    this._closeButtonClickHandlerBind = this._closeButtonClickHandler.bind(this);
+    this._closeButton.on('click', this._closeButtonClickHandlerBind);
+  }
+  _removeCloseButtonClickEvent() {
+    this._closeButton.off('click', this._closeButtonClickHandlerBind);
+  }
+  _setChangeSingEvent() {
+    this._changeSingEventHandlerBind = this._changeSingEventHandler.bind(this);
+    events.on('change-sing', this._changeSingEventHandlerBind);
+  }
+  _removeChangeSingEvent() {
+    events.off('change-sing', this._changeSingEventHandlerBind);
   }
 
   // update
   _updateCurrentSignType(type) {
     this._currentSignType = type;
   }
-  _updateIllustrationImage() {
-    const illustrationImagePath = this._getIllustrationImagePath();
-    this._inllustration.styles({ 'background-image': `url('${illustrationImagePath}')` });
+  _updateSingForm() {
+    const singData = this._getCurrentSingData();
+    this._singForm.updateSingForm(this._currentSignType, singData);
   }
 
   // help methods
-  _getIllustrationImagePath() {
-    const illustrationImageName = this._singData[this._currentSignType].illustrationImage;
-    return `assets/images/${illustrationImageName}-bg.png`;
+  _getCurrentSingData() {
+    return this._singData[this._currentSignType];
+  }
+  _addCurrentSingTypeClass() {
+    this._singFrame.add(`.is-${this._currentSignType}`);
+  }
+  _removeCurrentSingTypeClass() {
+    this._singFrame.remove(`.is-${this._currentSignType}`);
   }
 }
 

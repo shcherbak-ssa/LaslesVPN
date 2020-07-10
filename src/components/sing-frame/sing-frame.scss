@@ -1,5 +1,8 @@
 
+$sing-frame-bgcolor: rgba($main-header-color, 0.5);
+
 .sing-frame {
+  background: $sing-frame-bgcolor;
   display: none;
   z-index: 9999;
   -short-position: fixed 0 x x 0;
@@ -9,25 +12,24 @@
   }
 
   &--illustration, &--frame {
-    height: 100%;
     -short-position: absolute 0 x x x;
   }
   &--illustration {
+    background-image: url('assets/images/singup-bg.png');
     background-size: cover;
     background-repeat: no-repeat;
     left: 0;
-    width: 60%;
     transition: .4s;
 
     .sing-frame.is-sing-in & {
-      left: 40%;
+      background-image: url('assets/images/singin-bg.png');
     }
   }
   &--frame {
     background: #fff;
     left: 50%;
-    width: 50%;
     transition: .4s;
+    -short-size: 50% 100%;
 
     .sing-frame.is-sing-in & {
       left: 0;

@@ -5,7 +5,7 @@ include ./sing-form/sing-form.pug
 //- component
 mixin sing-frame(inputs)
   #sing-frame.sing-frame(data-class="full")
-    .sing-frame--illustration
+    .sing-frame--illustration(data-class="full")
     .sing-frame--frame(data-class="flex-center")
       +sing-form(inputs)
       +base-logo()(class="sing-frame--logo")
