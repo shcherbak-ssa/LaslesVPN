@@ -8,6 +8,7 @@ import Buttons from './modules/buttons';
 import Subscribe from './modules/subscribe';
 import Inputs from './modules/inputs';
 import Slider from './modules/slider';
+import Sing from './modules/sing';
 
 const header = new Header();
 header.init();
@@ -26,3 +27,6 @@ inputs.initEvents();
 
 const slider = new Slider();
 slider.init();
+
+const sing = new Sing();
+sing.initEvents();

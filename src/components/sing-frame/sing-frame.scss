@@ -1,7 +1,12 @@
 
-.sign-frame {
+.sing-frame {
   display: none;
+  z-index: 9999;
   -short-position: fixed 0 x x 0;
+
+  &.is-sing-in, &.is-sing-up {
+    display: block;
+  }
 
   &--illustration, &--frame {
     height: 100%;
@@ -11,11 +16,21 @@
     background-size: cover;
     left: 0;
     width: 60%;
+    transition: .4s;
+
+    .sing-frame.is-sing-in & {
+      left: 40%;
+    }
   }
   &--frame {
     background: #fff;
-    right: 0;
+    left: 50%;
     width: 50%;
+    transition: .4s;
+
+    .sing-frame.is-sing-in & {
+      left: 0;
+    }
   }
   &--logo, &--copyright {
     position: absolute;
@@ -26,7 +41,7 @@
   }
   &--close-button {
     top: 35px;
-    left: 35px;
+    right: 35px;
   }
   &--copyright {
     bottom: 35px;

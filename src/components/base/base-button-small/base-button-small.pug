@@ -1,4 +1,8 @@
 
-mixin base-button-small(value)
-  .base-button-small(class=attributes.class, data-class="flex-center click")= value
+mixin base-button-small(value, event)
+  .base-button-small(
+    class=attributes.class,
+    data-class="flex-center click",
+    data-button=event
+  )= value
     .base-button-small--shadow(data-class="button-shadow")
