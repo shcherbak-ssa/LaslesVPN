@@ -13,8 +13,7 @@ class Subscribe {
   initEvents() {
     events
       .on('open-subscribe-modal', this._openSubscribeModalHandler.bind(this))
-      .on('init-subscribe-events', this._initSubscribeEventsHandler.bind(this))
-      .on('subscribe', this._subscribeHandler.bind(this));
+      .on('init-subscribe-events', this._initSubscribeEventsHandler.bind(this));
   }
 
   /** private methods */
@@ -36,13 +35,6 @@ class Subscribe {
   _initSubscribeEventsHandler() {
     this._subscribeOpenCallback();
   }
-  _subscribeHandler() {
-    const input = this._subscribe.$('.base-input');
-
-    if( input.has('.is-error') ) return;
-    events.emit('close-popup');
-  }
-  
 }
 
 /** export */

@@ -23,7 +23,7 @@ class Buttons {
   }
   _buttonClickHandler({target}) {
     const buttonClickEvent = target.dataset.button;
-    events.emit(buttonClickEvent);
+    if( buttonClickEvent ) events.emit(buttonClickEvent);
   }
   _setButtonEventHandler(button) {
     this._setButtonClickHandler(button);
