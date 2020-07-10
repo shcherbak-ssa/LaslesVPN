@@ -3,13 +3,16 @@
 /** imports */
 import $ from './tools';
 import events from './events';
+import singData from '../data/sing-data.json';
 
 /** sign class */
 class Sing {
   constructor() {
     this._singFrame = $('#sing-frame');
     this._closeButton = this._singFrame.$('.sing-frame--close-button');
+    this._inllustration = this._singFrame.$('.sing-frame--illustration');
 
+    this._singData = singData;
     this._currentSignType = '';
   }
   /** public methods */
@@ -44,15 +47,26 @@ class Sing {
   // view
   _showSingFrame() {
     this._singFrame.add(`.is-${this._currentSignType}`);
+    this._updateIllustrationImage();
   }
   _hideSignFrame() {
     this._singFrame.remove(`.is-${this._currentSignType}`);
     this._removeCloseButtonEvent();
   }
 
-  // help methods
+  // update
   _updateCurrentSignType(type) {
     this._currentSignType = type;
+  }
+  _updateIllustrationImage() {
+    const illustrationImagePath = this._getIllustrationImagePath();
+    this._inllustration.styles({ 'background-image': `url('${illustrationImagePath}')` });
+  }
+
+  // help methods
+  _getIllustrationImagePath() {
+    const illustrationImageName = this._singData[this._currentSignType].illustrationImage;
+    return `assets/images/${illustrationImageName}-bg.png`;
   }
 }
 
