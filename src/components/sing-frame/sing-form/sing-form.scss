@@ -1,0 +1,18 @@
+
+.sing-form {
+  align-items: center;
+
+  &--header {
+    margin-bottom: 20px;
+  }
+  &--paragraph, &--input {
+    margin-bottom: 30px;
+  }
+  &--socials {
+    margin-bottom: 40px;
+    width: 135px;
+  }
+  &--button {
+    margin-bottom: 25px;
+  }
+}
