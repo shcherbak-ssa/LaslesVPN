@@ -6,7 +6,7 @@ const LIMIT_PASSWORD_LENGTH = 8;
 /** check-password rule */
 function checkPassword(password) {
   if( password.length < LIMIT_PASSWORD_LENGTH )
-    throw new Error('Password cannot be less than 8 characters');
+    throw new Error('Password must be over 8 characters');
 }
 
 /** export */

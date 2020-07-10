@@ -7,28 +7,38 @@ import rules from './rules';
 
 /** inputs class */
 class Inputs {
+  /** private properties */
+  _eventHandlers = new Map();
+
   /** public methods */
   initEvents() {
-    events.on('set-input-events', this._setInputEventsHandler.bind(this));
+    events
+      .on('set-input-events', this._setInputEventsHandler.bind(this))
+      .on('remove-input-events', this._removeInputEventsHandler.bind(this))
+      .on('refresh-input', this._refreshInputHandler.bind(this))
   }
 
   /** private methods */
 
   // handlers
   _setInputEventsHandler(input) {
-    input.on('click', this._inputClickHandler.bind(this));
+    this._saveEventHandler(input, this._inputClickHandler.bind(this));
+    input.on('click', this._getEventHandler(input));
+  }
+  _removeInputEventsHandler(input) {
+    input.off('click', this._getEventHandler(input));
+    this._removeEventHandler(input);
   }
   _inputClickHandler({target}) {
     const input = this._createElement(target);
     if( !input.has('.base-input') ) return;
 
     input.add('.is-active');
-    input.remove('.is-success');
-    input.remove('.is-error');
+    this._removeStatusClasses(input);
 
     const inputField = input.$('.base-input--input');
-    inputField.focus();
     inputField.on('blur', this._inputBlurHandler.bind(this));
+    inputField.focus();
 
     const inputError = input.$('.base-input--error');
     inputError.text('');
@@ -50,6 +60,26 @@ class Inputs {
       input.add('.is-error');
     }
   }
+  _refreshInputHandler(input) {
+    this._removeStatusClasses(input);
+
+    const inputField = input.$('.base-input--input');
+    inputField.value('');
+
+    const inputError = input.$('.base-input--error');
+    inputError.text('');
+  }
+
+  // events handelrs
+  _saveEventHandler(forWhat, handler) {
+    this._eventHandlers.set(forWhat, handler)
+  }
+  _getEventHandler(forWhat) {
+    return this._eventHandlers.get(forWhat);
+  }
+  _removeEventHandler(forWhat) {
+    this._eventHandlers.delete(forWhat);
+  }
 
   // help methods
   _createElement(element) {
@@ -58,7 +88,12 @@ class Inputs {
   _checkInputValue(type, value) {
     switch(type) {
       case 'email': return rules.checkEmail(value);
+      case 'password': return rules.checkPassword(value);
     }
+  }
+  _removeStatusClasses(input) {
+    input.remove('.is-success');
+    input.remove('.is-error');
   }
 }
 

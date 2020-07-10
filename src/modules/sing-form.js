@@ -7,6 +7,7 @@ import events from './events';
 class SingForm {
   constructor(singFrame) {
     this._singFormHeader = singFrame.$('.sing-form--header');
+    this._singFormInputs = singFrame.$('.sing-form--input', true);
     this._singFormButton = singFrame.$('.sing-form--button');
     this._singFormLink = singFrame.$('.sing-form--link');
 
@@ -24,9 +25,16 @@ class SingForm {
   }
   setSingFormEvents() {
     this._setSingFormLinkEvent();
+    this._setSingFormInputsEvents();
   }
   removeSingFormEvents() {
     this._removeSingFormLinkEvent();
+    this._removeSingFormInputsEvents();
+  }
+  refreshInputs() {
+    this._singFormInputs.forEach((input) => {
+      events.emit('refresh-input', input);
+    })
   }
 
   /** private methods */
@@ -53,6 +61,17 @@ class SingForm {
   _removeSingFormLinkEvent() {
     this._singFormLink.off('click', this._singFormLinkClickHandlerBind);
   }
+  _setSingFormInputsEvents() {
+    this._singFormInputs.forEach((input) => {
+      events.emit('set-input-events', input);
+    })
+  }
+  _removeSingFormInputsEvents() {
+    this._singFormInputs.forEach((input) => {
+      events.emit('remove-input-events', input);
+    })
+  }
+  
 
   // handlers
   _singFormLinkClickHandler(event) {
@@ -60,6 +79,8 @@ class SingForm {
     
     const changedSingType = this._currentSingType === 'sing-in' ? 'sing-up' : 'sing-in';
     events.emit('change-sing', changedSingType);
+
+    this.refreshInputs();
   }
 }
 

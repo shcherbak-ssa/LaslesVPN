@@ -31,6 +31,13 @@ class Element {
   text(text) {
     this._el.innerHTML = text;
   }
+  value(newValue) {
+    if( newValue === '' || newValue ) {
+      this._el.value = newValue;
+      return;
+    }
+    return this._el.value;
+  }
   getElement() {
     return this._el;
   }

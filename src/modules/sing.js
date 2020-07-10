@@ -44,7 +44,9 @@ class Sing {
     this._hideSignFrame();
     this._removeChangeSingEvent();
     this._removeCloseButtonClickEvent();
+
     this._singForm.removeSingFormEvents();
+    this._singForm.refreshInputs()
   }
 
   // view
