@@ -15,7 +15,6 @@ $sing-frame-bgcolor: rgba($main-header-color, 0.5);
     -short-position: absolute 0 x x x;
   }
   &--illustration {
-    background-image: url('assets/images/singup-bg.png');
     background-size: cover;
     background-repeat: no-repeat;
     left: 0;
@@ -23,6 +22,9 @@ $sing-frame-bgcolor: rgba($main-header-color, 0.5);
 
     .sing-frame.is-sing-in & {
       background-image: url('assets/images/singin-bg.png');
+    }
+    .sing-frame.is-sing-up & {
+      background-image: url('assets/images/singup-bg.png');
     }
   }
   &--frame {
@@ -34,9 +36,18 @@ $sing-frame-bgcolor: rgba($main-header-color, 0.5);
     .sing-frame.is-sing-in & {
       left: 0;
     }
+
+    @media screen and (max-width: 1024px) {
+      width: 100%;
+      left: 0;
+    }
   }
   &--logo, &--copyright {
     position: absolute;
+
+    @media screen and (max-width: 359px) {
+      display: none;
+    }
   }
   &--logo {
     top: 29px;

@@ -51,6 +51,8 @@ class Sing {
 
   // view
   _showSingFrame(type) {
+    $.body.block();
+
     this._updateCurrentSignType(type);
     this._addCurrentSingTypeClass();
     this._updateSingForm();
@@ -58,6 +60,7 @@ class Sing {
     this._setSingFrameEvents();
   }
   _hideSignFrame() {
+    $.body.unblock();
     this._removeCurrentSingTypeClass();
   }
 
