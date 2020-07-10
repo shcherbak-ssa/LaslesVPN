@@ -3,7 +3,10 @@
 -
   let inputs = {
     email: {
-      icon: 'user-input', type: 'email', placeholder: 'E-mail address'
+      type: 'email', placeholder: 'E-mail address'
+    },
+    password: {
+      type: 'password', placeholder: 'Password'
     }
   }
 
@@ -34,7 +37,7 @@ html(lang="en")
     //- popup
     +popup()
     //- sing-frame
-    +sing-frame()
+    +sing-frame(inputs)
     //- reusable-components
     #reusable-components.reusable-components
       +menu-bg()
