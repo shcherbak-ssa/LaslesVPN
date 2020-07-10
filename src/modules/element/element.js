@@ -7,6 +7,7 @@ import events from './events';
 import clone from './clone';
 import children from './children';
 import insert from './insert';
+import sizes from './sizes';
 import styles from './styles';
 
 /** element class */
@@ -44,6 +45,7 @@ inheritance(events);
 inheritance(clone);
 inheritance(children);
 inheritance(insert);
+inheritance(sizes);
 inheritance(styles);
 
 /** export */
