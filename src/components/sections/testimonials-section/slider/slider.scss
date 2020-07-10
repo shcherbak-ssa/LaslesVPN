@@ -12,6 +12,7 @@
     position: absolute;
   }
   &--slides {
+    transition: .4s;
     @media screen and (min-width: 1800px) {
       transform: translateX(-17%);
     }

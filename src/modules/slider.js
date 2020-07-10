@@ -5,9 +5,9 @@ import $ from './tools';
 import Element from './element';
 
 /** constants */
-const limitPrevIndex = 0;
-const slideWidthAndMargin = 450;
-const mobileWidthPoint = 500;
+const LIMIT_PREV_INDEX = 0;
+const SLIDE_MARGIN_RIGHT = 50;
+const MOBILE_WIDTH_POINT = 500;
 
 /** slider class */
 class Slider {
@@ -62,7 +62,7 @@ class Slider {
   }
   _prevButtonClickHandler() {
     this._changeSlideByButtonClick(
-      limitPrevIndex,
+      LIMIT_PREV_INDEX,
       this._currentSlideIndex - 1
     );
   }
@@ -112,23 +112,18 @@ class Slider {
   _moveSlideInMobile() {
     if( this._lastActiveSlideIndex === this._currentSlideIndex ) return;
 
-    const lastSlide = this._getSlideByIndex(this._lastActiveSlideIndex);
-    const currentSlide = this._getSlideByIndex(this._currentSlideIndex);
-    const translateValue = this._lastActiveSlideIndex < this._currentSlideIndex ? -120 : 120;
+    const slideWidth = this._slides[0].width();
+    const translateValue = this._currentSlideIndex * (slideWidth + SLIDE_MARGIN_RIGHT);
     
-    this._updateSlideTranformStyle(lastSlide, translateValue);
-    this._updateSlideTranformStyle(currentSlide, 0);
+    this._updateSlidesContainerTranformStyle(translateValue);
   }
 
   // help methods
   _isMobileWidth() {
-    return document.documentElement.clientWidth <= mobileWidthPoint;
+    return document.documentElement.clientWidth <= MOBILE_WIDTH_POINT;
   }
-  _getSlideByIndex(index) {
-    return this._slidesContainer.$(`[data-slide-index="${index}"]`);
-  }
-  _updateSlideTranformStyle(slide, value) {
-    slide.styles({ transform: `translateX(${value}%)` })
+  _updateSlidesContainerTranformStyle(value) {
+    this._slidesContainer.styles({ transform: `translateX(-${value}px)` })
   }
 }
 
