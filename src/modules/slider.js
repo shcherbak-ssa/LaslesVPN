@@ -21,6 +21,7 @@ class Slider {
 
     this._currentSlideIndex = 0;
     this._lastActiveSlideIndex = 0;
+    this._lastSlideIndex = this._slides.length - 1;
   }
 
   /** public methods */
@@ -68,7 +69,7 @@ class Slider {
   }
   _nextButtonClickHandler() {
     this._changeSlideByButtonClick(
-      this._slides.length - 1,
+      this._lastSlideIndex,
       this._currentSlideIndex + 1
     );
   }
@@ -107,20 +108,22 @@ class Slider {
 
   // move slide
   _moveSlide() {
-    this._isMobileWidth() ? this._moveSlideInMobile() : '';
+    if( this._lastActiveSlideIndex === this._currentSlideIndex ) return;
+    this._moveSlideInMobile();
+    //this._isMobileWidth() ? this._moveSlideInMobile() : '';
   }
   _moveSlideInMobile() {
-    if( this._lastActiveSlideIndex === this._currentSlideIndex ) return;
-
-    const slideWidth = this._slides[0].width();
-    const translateValue = this._currentSlideIndex * (slideWidth + SLIDE_MARGIN_RIGHT);
-    
+    const translateValue = this._getTranslateValue();
     this._updateSlidesContainerTranformStyle(translateValue);
   }
 
   // help methods
   _isMobileWidth() {
     return document.documentElement.clientWidth <= MOBILE_WIDTH_POINT;
+  }
+  _getTranslateValue() {
+    const slideWidth = this._slides[0].width();
+    return this._currentSlideIndex * (slideWidth + SLIDE_MARGIN_RIGHT);
   }
   _updateSlidesContainerTranformStyle(value) {
     this._slidesContainer.styles({ transform: `translateX(-${value}px)` })
