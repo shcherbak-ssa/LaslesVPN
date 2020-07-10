@@ -6,13 +6,7 @@
   -short-size: 400px 230px;
 
   @media screen and (max-width: 500px) {
-    //margin: 0;
-    //position: absolute;
     width: calc(86vw);
-
-    &:not(:first-child) {
-      //transform: translateX(120%);
-    }
   }
 
   &.is-active {
