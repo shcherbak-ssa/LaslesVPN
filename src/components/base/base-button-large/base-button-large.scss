@@ -1,18 +1,7 @@
 
 .base-button-large {
-  font: {
-    family: 'rubik-bold';
-    size: 16px;
-  };
+  font-size: 16px;
+  transition: .2s;
   -short-color: #fff $primary-color;
   -short-size: 250px 60px;
-
-  &--shadow {
-    -short-size: 210px 100%;
-    -short-position: absolute 0 20px x x;
-  }
-  &:hover &--shadow {
-    opacity: 1;
-    top: 25px;
-  }
 }

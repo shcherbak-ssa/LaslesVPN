@@ -64,6 +64,11 @@
 [data-class*="box-shadow"] {
   box-shadow: 0 30px 60px rgba(13, 16, 37, 0.2);
 }
+[data-class*="button-hover-shadow"] {
+  &:hover {
+    box-shadow: 0 20px 40px rgba(245, 56, 56, 0.5);
+  }
+}
 
 // sizes
 [data-class*="w100"] {
@@ -96,8 +101,6 @@
   display: flex;
   flex-direction: column;
 }
-
-// padding
 
 // position
 [data-class*="pos-center"] {
