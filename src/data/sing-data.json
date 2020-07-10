@@ -1,0 +1,14 @@
+{
+  "sing-in": {
+    "header": "Sing in",
+    "buttonValue": "Sing in",
+    "linkText": "Do not have an account?",
+    "illustrationImage": "singin"
+  },
+  "sing-up": {
+    "header": "Sing up",
+    "buttonValue": "Sing up",
+    "linkText": "Already have an account?",
+    "illustrationImage": "singup"
+  }
+}
