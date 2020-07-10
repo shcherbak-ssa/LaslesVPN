@@ -1,0 +1,19 @@
+
+.sign-frame {
+  -short-position: fixed 0 x x 0;
+
+  &--illustration, &--frame {
+    height: 100%;
+    -short-position: absolute 0 x x x;
+  }
+  &--illustration {
+    background-size: cover;
+    left: 0;
+    width: 60%;
+  }
+  &--frame {
+    background: #fff;
+    right: 0;
+    width: 50%;
+  }
+}
