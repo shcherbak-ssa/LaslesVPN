@@ -2,5 +2,5 @@
 mixin popup(vars)
   #popup.popup
     .popup--container(data-class="main-radius box-sizing pos-center")
-      img.popup--close-button(src="assets/icons/close.svg", data-class="click")
+      +base-close-button()(class="popup--close-button")
     .popup--bg(data-class="full")

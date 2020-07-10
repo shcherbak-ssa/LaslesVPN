@@ -46,7 +46,8 @@ $popup-bgcolor: rgba($main-header-color, 0.5);
     }
   }
   &--close-button {
-    -short-position: absolute 20px 20px x x;
+    top: 20px;
+    right: 20px;
   }
   &--bg {
     background: $popup-bgcolor;
