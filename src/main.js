@@ -12,7 +12,6 @@ document.addEventListener(
 
 /** load handler */
 async function domContentLoadedHandler() {
-  console.log('content loaded');
   const launchSiteModules = (await import('./modules/launcher')).default;
   launchSiteModules();
 }

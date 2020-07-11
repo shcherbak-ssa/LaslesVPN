@@ -1,6 +1,7 @@
 'use strict';
 
 /** imports */
+import $ from './tools';
 import events from './events';
 
 import ImportModule from './import';
@@ -28,6 +29,11 @@ const modules = [
 function launchSiteModules() {
   modules.forEach((module) => module.init());
   events.emit('forse-resize');
+
+  setTimeout(() => {
+    $('#site').styles({ display: 'block' });
+    $('#loader').remove();
+  }, 1000);
 }
 
 /** export */
