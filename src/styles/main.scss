@@ -19,9 +19,10 @@ h1, h2, h3 {
 body {
   font-family: 'rubik-reqular', sans-serif;
   position: relative;
-  //-short-size: 100vw x;
+  height: 100vh;
 }
 .site {
+  display: none;
   overflow-x: hidden;
   position: relative;
 }
@@ -31,6 +32,9 @@ body {
 .line-gradient {
   background: linear-gradient(180deg, #F8F8F8 -45.04%, rgba(248, 248, 248, 0) 88.56%);
 }
+
+/** loader */
+@import './loader.scss';
 
 /** classes */
 @import './classes.scss';
