@@ -16,6 +16,10 @@ class Header {
 
   /** public methods */
   init() {
+    events.on('close-menu', () => {
+      this._header.remove('.is-menu-open');
+      this._closeMenu();
+    });
     this._burgerButton.on('click', this._burgerButtonClickHandler.bind(this));
   }
 

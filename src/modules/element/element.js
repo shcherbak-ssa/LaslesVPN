@@ -41,6 +41,9 @@ class Element {
   getElement() {
     return this._el;
   }
+  scroll(options) {
+    this._el.scrollIntoView(options);
+  }
 }
 
 /** inheritance */

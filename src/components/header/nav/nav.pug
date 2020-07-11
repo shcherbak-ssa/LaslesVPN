@@ -1,7 +1,31 @@
 
-- let navigationItems = ['About', 'Features', 'Pricing', 'Testimonials', 'Help'];
+//- assets
+-
+  let navigationItems = [
+    {
+      href: '',
+      value: 'About'
+    },
+    {
+      href: '#features',
+      value: 'Features'
+    },
+    {
+      href: '#plans',
+      value: 'Pricing'
+    },
+    {
+      href: '#testimonials',
+      value: 'Testimonials'
+    },
+    {
+      href: '#footer',
+      value: 'Help'
+    }
+  ];
 
+//- component
 mixin nav()
-  nav.nav(class=attributes.class, data-class="flex")
+  nav#nav.nav(class=attributes.class, data-class="flex")
     each item in navigationItems
-      +base-link('', item)(class="nav--item")
+      +base-link(item.href, item.value)(class="nav--item")

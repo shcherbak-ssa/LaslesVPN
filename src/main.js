@@ -3,6 +3,7 @@
 import './styles/main.scss';
 
 import Header from './modules/header';
+import Nav from './modules/nav';
 import Popup from './modules/popup';
 import Buttons from './modules/buttons';
 import Subscribe from './modules/subscribe';
@@ -12,6 +13,9 @@ import Sing from './modules/sing';
 
 const header = new Header();
 header.init();
+
+const nav = new Nav();
+nav.init();
 
 const popup = new Popup();
 popup.initEvents();
