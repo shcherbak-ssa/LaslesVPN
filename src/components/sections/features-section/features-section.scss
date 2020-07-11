@@ -19,10 +19,7 @@
     }
   }
   &--illustration {
-    background: {
-      image: url('assets/images/feature-man.png');
-      size: cover;
-    };
+    background-size: cover;
     z-index: -1;
     -short-size: 500px 414px;
     -short-position: absolute x x 0 34px;
@@ -39,6 +36,9 @@
     @media screen and (max-width: 1023px) {
       left: 45%;
       transform: none;
+    }
+    @media screen and (min-width: 580px) {
+      background-image: url('assets/images/feature-man.png');
     }
     @media screen and (max-width: 580px) {
       display: none;
