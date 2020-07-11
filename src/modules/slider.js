@@ -2,7 +2,6 @@
 
 /** import */
 import $ from './tools';
-import Element from './element';
 
 /** constants */
 const LIMIT_PREV_INDEX = 0;
@@ -76,7 +75,7 @@ class Slider {
 
   // change slide
   _changeSlideByClick(element) {
-    const currentSlide = Element.create(element);
+    const currentSlide = $.createElement(element);
     const newActiveSlideIndex = +currentSlide.get(':data-slide-index');
     this._changeSlide(newActiveSlideIndex);
   }

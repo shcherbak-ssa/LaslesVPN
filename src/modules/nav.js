@@ -2,7 +2,6 @@
 
 /** imports */
 import $ from './tools';
-import Element from './element';
 import events from './events';
 
 /** constants */
@@ -30,7 +29,7 @@ class Nav {
       events.emit('close-menu');
     }
 
-    const navItem = Element.create(event.target);
+    const navItem = $.createElement(event.target);
     const navItemAnchor = navItem.get(':href');
     
     if( navItemAnchor ) {

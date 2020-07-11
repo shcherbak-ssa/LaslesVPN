@@ -1,7 +1,7 @@
 'use strict';
 
 /** imports */
-import Element from './element';
+import $ from './tools';
 import events from './events';
 import rules from './rules';
 
@@ -83,7 +83,7 @@ class Inputs {
 
   // help methods
   _createElement(element) {
-    return Element.create(element)
+    return $.createElement(element)
   }
   _checkInputValue(type, value) {
     switch(type) {

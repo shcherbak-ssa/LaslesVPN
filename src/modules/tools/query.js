@@ -1,7 +1,7 @@
 'use strict';
 
 /** imports */
-import Element from '../element';
+import Element from './element';
 
 /** query class */
 class Query {
