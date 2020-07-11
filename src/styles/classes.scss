@@ -1,5 +1,5 @@
 
-[data-class*="scc"] { // site-content-center
+[data-class~="scc"] { // site-content-center
   max-width: 1140px;
   margin: 0 auto;
 
@@ -24,7 +24,7 @@
 }
 
 // border
-[data-class*="mb"] { // main-border
+[data-class~="mb"] { // main-border
   border: 2px solid $main-border-color;
 
   &:hover {
@@ -33,84 +33,84 @@
 }
 
 // border-radius
-[data-class*="circle"] {
+[data-class~="circle"] {
   border-radius: 50%;
 }
-[data-class*="mr"] { // main-radius
+[data-class~="mr"] { // main-radius
   border-radius: $main-border-radius;
 }
 
 // box-sizing
-[data-class*="bs"] { // box-sizing
+[data-class~="bs"] { // box-sizing
   box-sizing: border-box;
 }
 
 // font-family
-[data-class*="fm"] { // font-medium
+[data-class~="fm"] { // font-medium
   font-family: 'rubik-medium', sans-serif;
 }
-[data-class*="fb"] { // font-bold
+[data-class~="fb"] { // font-bold
   font-family: 'rubik-bold', sans-serif;
 }
 
 // shadows
-[data-class*="bxs"] { // box-shadow
+[data-class~="bxs"] { // box-shadow
   box-shadow: 0 30px 60px rgba(13, 16, 37, 0.2);
 }
-[data-class*="bhs"] { // button-hover-shadow
+[data-class~="bhs"] { // button-hover-shadow
   &:hover {
     box-shadow: 0 20px 40px rgba(245, 56, 56, 0.5);
   }
 }
 
 // sizes
-[data-class*="w100"] {
+[data-class~="w100"] {
   -short-size: 100% x;
 }
-[data-class*="full"] {
+[data-class~="full"] {
   -short-size: 100%;
 }
 
 // flexbox
-[data-class*="f"] { // flex
+[data-class~="f"] { // flex
   display: flex;
 }
-[data-class*="fc"] { // flex-center
+[data-class~="fc"] { // flex-center
   display: flex;
   justify-content: center;
   align-items: center;
 }
-[data-class*="fbt"] { // flex-between
+[data-class~="fbt"] { // flex-between
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-[data-class*="fa"] { // flex-around
+[data-class~="fa"] { // flex-around
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
-[data-class*="fcl"] { // flex-column
+[data-class~="fcl"] { // flex-column
   display: flex;
   flex-direction: column;
 }
 
 // position
-[data-class*="pc"] { // pos-center
+[data-class~="pc"] { // pos-center
   -short-position: absolute 50% x x 50%;
   transform: translate(-50%, -50%);
 }
-[data-class*="ptc"] { // pos-top-center
+[data-class~="ptc"] { // pos-top-center
   -short-position: absolute 50% x x;
   transform: translateY(-50%);
 }
-[data-class*="plc"] { // pos-left-center
+[data-class~="plc"] { // pos-left-center
   -short-position: absolute x x x 50%;
   transform: translateX(-50%);
 }
 
 // psevdo elements
-[data-class*="click"] {
+[data-class~="click"] {
   cursor: pointer;
   position: relative;
 
@@ -122,7 +122,7 @@
     @include psevdo-element;
   }
 }
-[data-class*="io"] { // illustration-opacity
+[data-class~="io"] { // illustration-opacity
   &::after {
     background: rgba(255, 255, 255, 0.3);
     top: 0;
