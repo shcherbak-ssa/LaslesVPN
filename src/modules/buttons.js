@@ -4,17 +4,21 @@
 import $ from './tools';
 import events from './events';
 
-/** buttons class */
-class Buttons {
-  constructor() {
-    this._buttons = $('[data-button]', true);
-    this._buttonsHandlers = new Map();
-  }
+/** buttons-module */
+class ButtonsModule {
+  _buttons = $('[data-button]', true);
+  _buttonsHandlers = new Map();
 
-  /** public methods */
-  initEvents() {
-    this._buttons.forEach((button) => this._setButtonClickHandler(button));
-    events.on('set-button-event', this._setButtonEventHandler.bind(this));
+  /** static methods */
+  static init() {
+    const buttonsModule = new ButtonsModule();
+    buttonsModule._buttons.forEach((button) => {
+      buttonsModule._setButtonClickHandler(button)
+    });
+    events.on(
+      'set-button-event',
+      buttonsModule._setButtonEventHandler.bind(buttonsModule)
+    );
   }
 
   /** private methods */
@@ -31,4 +35,4 @@ class Buttons {
 }
 
 /** export */
-export default Buttons;
+export default ButtonsModule;
