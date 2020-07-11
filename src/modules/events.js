@@ -1,10 +1,8 @@
 'use strict';
 
-/** events class */
+/** events */
 class Events {
-  constructor() {
-    this._handlers = new Map();
-  }
+  _handlers = new Map();
 
   /** public methods */
   on(event, handler) {
@@ -46,7 +44,9 @@ class Events {
     return this._handlers.has(event);
   }
   _checkIfEventExist(event) {
-    if( !this._isEventExist(event) ) throw new Error(`Unknow event: ${event}`);
+    if( !this._isEventExist(event) ) {
+      throw new Error(`Unknow event: ${event}`);
+    }
   }
   _getHandlers(event) {
     return this._handlers.get(event);
