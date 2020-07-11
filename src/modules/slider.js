@@ -8,20 +8,18 @@ const LIMIT_PREV_INDEX = 0;
 const SLIDE_MARGIN_RIGHT = 50;
 const MOBILE_WIDTH_POINT = 500;
 
-/** slider class */
+/** slider-module */
 class SliderModule {
-  constructor() {
-    this._slider = $('#slider');
-    this._slidesContainer = this._slider.$('.slider--slides');
-    this._slides = this._slidesContainer.children();
-    this._indexes = this._slider.$('.slide-index', true);
-    this._prevButton = this._slider.$('#prev-button');
-    this._nextButton = this._slider.$('#next-button');
-
-    this._currentSlideIndex = 0;
-    this._lastActiveSlideIndex = 0;
-    this._lastSlideIndex = this._slides.length - 1;
-  }
+  /** private properties */
+  _slider = $('#slider');
+  _slidesContainer = this._slider.$('.slider--slides');
+  _slides = this._slidesContainer.children();
+  _indexes = this._slider.$('.slide-index', true);
+  _prevButton = this._slider.$('#prev-button');
+  _nextButton = this._slider.$('#next-button');
+  _currentSlideIndex = 0;
+  _lastActiveSlideIndex = 0;
+  _lastSlideIndex = this._slides.length - 1;
 
   /** static methods */
   static init() {

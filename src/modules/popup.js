@@ -4,29 +4,35 @@
 import $ from './tools';
 import events from './events';
 
-/** popup class */
-class Popup {
-  constructor() {
-    this._popup = $('#popup');
-    this._popupBg = this._popup.$('.popup--bg');
-    this._popupContainer = this._popup.$('.popup--container');
-    this._popupCloseButton = this._popup.$('.popup--close-button');
-    this._currentModal = null;
-  }
+/** popup-module */
+class PopupModule {
+  /** private properties */
+  _popup = $('#popup');
+  _popupBg = this._popup.$('.popup--bg');
+  _popupContainer = this._popup.$('.popup--container');
+  _popupCloseButton = this._popup.$('.popup--close-button');
+  _currentPopup = null;
 
-  /** public methods */
-  initEvents() {
+  /** static methods */
+  static init() {
+    const popupModule = new PopupModule();
     events
-      .on('open-popup', this._popupOpenHandler.bind(this))
-      .on('close-popup', this._popupCloseHandler.bind(this));
+      .on(
+        'open-popup',
+        popupModule._popupOpenHandler.bind(popupModule)
+      )
+      .on(
+        'close-popup',
+        popupModule._popupCloseHandler.bind(popupModule)
+      )
   }
 
   /** private methods */
 
   // handlers
   _popupOpenHandler(popup) {
-    this._popup.add('.is-open');
     $.body.block();
+    this._popup.add('.is-open');
 
     this._popupCloseButton.on('click', this._closePopupHandler);
     this._popupBg.on('click', this._closePopupHandler);
@@ -35,7 +41,7 @@ class Popup {
       const modalComponent = $.clone(popup.name);
       this._popupContainer.append(modalComponent);
       this._togglePopupContainerClassname(popup.name);
-      this._currentModal = popup;
+      this._currentPopup = popup;
       popup.openCallback();
     }
   }
@@ -47,14 +53,14 @@ class Popup {
     this._popupBg.off('click', this._closePopupHandler);
   
     setTimeout(() => {
-      this._popup.remove('.is-close');
       $.body.unblock();
+      this._popup.remove('.is-close');
   
-      if( this._currentModal ) {
-        const modalClassName = this._currentModal.name;
+      if( this._currentPopup ) {
+        const modalClassName = this._currentPopup.name;
         this._popupContainer.$(`.${modalClassName}`).remove();
         this._togglePopupContainerClassname(modalClassName);
-        this._currentModal = null;
+        this._currentPopup = null;
       }
     }, 200);
   }
@@ -69,4 +75,4 @@ class Popup {
 }
 
 /** export */
-export default Popup;
+export default PopupModule;

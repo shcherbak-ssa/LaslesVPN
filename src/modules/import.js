@@ -3,7 +3,7 @@
 /** imports */
 import events from './events';
 
-/** import-module class */
+/** import-module */
 class ImportModule {
   _isSliderImported = false;
   _isHeaderImported = false;

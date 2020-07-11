@@ -4,25 +4,29 @@
 import $ from './tools';
 import events from './events';
 import SingForm from './sing-form';
-
 import singData from '../data/sing-data.json';
 
-/** sign class */
-class Sing {
-  constructor() {
-    this._singFrame = $('#sing-frame');
-    this._closeButton = this._singFrame.$('.sing-frame--close-button');
+/** sign-module */
+class SingModule {
+  /** private properties */
+  _singFrame = $('#sing-frame');
+  _closeButton = this._singFrame.$('.sing-frame--close-button');
+  _singForm = new SingForm(this._singFrame);
+  _singData = singData;
+  _currentSignType = '';
 
-    this._singForm = new SingForm(this._singFrame);
-
-    this._singData = singData;
-    this._currentSignType = '';
-  }
-  /** public methods */
-  initEvents() {
+  /** static methods */
+  static init() {
+    const singModule = new SingModule();
     events
-      .on('sing-in', this._singInEventHandler.bind(this))
-      .on('sing-up', this._singUpEventHandler.bind(this))
+      .on(
+        'sing-in',
+        singModule._singInEventHandler.bind(singModule)
+      )
+      .on(
+        'sing-up',
+        singModule._singUpEventHandler.bind(singModule)
+      )
   }
 
   /** private methods */
@@ -108,4 +112,4 @@ class Sing {
 }
 
 /** export */
-export default Sing;
+export default SingModule;

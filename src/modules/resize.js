@@ -7,8 +7,9 @@ import events from './events';
 const TABLET_START_WIDTH = 1024;
 const SLIDER_HIDE_WIDTH = 1799;
 
-/** resize class */
+/** resize-module */
 class ResizeModule {
+  /** private properties */
   _document = document.documentElement;
 
   /** static methods */

@@ -3,7 +3,7 @@
 /** imports */
 import events from './events';
 
-/** sing-form class */
+/** sing-form */
 class SingForm {
   constructor(singFrame) {
     this._singFormHeader = singFrame.$('.sing-form--header');

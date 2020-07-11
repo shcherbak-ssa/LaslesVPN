@@ -4,8 +4,9 @@
 import $ from './tools';
 import events from './events';
 
-/** header-module class */
+/** header-module */
 class HeaderModule {
+  /** private properties */
   _header = $('#header');
   _burgerButton = this._header.$('.header--burger-button');
   _signButtons = this._header.$('.header--sing-buttons');

@@ -7,17 +7,17 @@ import events from './events';
 /** constants */
 const HIDE_MENU_WIDTH = 1024;
 
-/** nav class */
-class Nav {
-  constructor() {
-    this._nav = $('#nav');
-    this._navItems = this._nav.$('.nav--item', true);
-  }
+/** nav-module */
+class NavModule {
+  /** private properties */
+  _nav = $('#nav');
+  _navItems = this._nav.$('.nav--item', true);
 
-  /** public methods */
-  init() {
-    this._navItems.forEach((navItem) => {
-      navItem.on('click', this._navItemClickHandler.bind(this))
+  /** static methods */
+  static init() {
+    const navModule = new NavModule();
+    navModule._navItems.forEach((navItem) => {
+      navItem.on('click', navModule._navItemClickHandler.bind(navModule))
     })
   }
 
@@ -42,4 +42,4 @@ class Nav {
 }
 
 /** export */
-export default Nav;
+export default NavModule;

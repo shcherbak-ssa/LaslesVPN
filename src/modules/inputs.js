@@ -5,17 +5,27 @@ import $ from './tools';
 import events from './events';
 import rules from './rules';
 
-/** inputs class */
-class Inputs {
+/** inputs-module */
+class InputsModule {
   /** private properties */
   _eventHandlers = new Map();
 
-  /** public methods */
-  initEvents() {
+  /** static methods */
+  static init() {
+    const inputsModule = new InputsModule();
     events
-      .on('set-input-events', this._setInputEventsHandler.bind(this))
-      .on('remove-input-events', this._removeInputEventsHandler.bind(this))
-      .on('refresh-input', this._refreshInputHandler.bind(this))
+      .on(
+        'set-input-events',
+        inputsModule._setInputEventsHandler.bind(inputsModule)
+      )
+      .on(
+        'remove-input-events',
+        inputsModule._removeInputEventsHandler.bind(inputsModule)
+      )
+      .on(
+        'refresh-input',
+        inputsModule._refreshInputHandler.bind(inputsModule)
+      )
   }
 
   /** private methods */
@@ -98,4 +108,4 @@ class Inputs {
 }
 
 /** export */
-export default Inputs;
+export default InputsModule;

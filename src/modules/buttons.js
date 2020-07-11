@@ -6,6 +6,7 @@ import events from './events';
 
 /** buttons-module */
 class ButtonsModule {
+  /** private properties */
   _buttons = $('[data-button]', true);
   _buttonsHandlers = new Map();
 

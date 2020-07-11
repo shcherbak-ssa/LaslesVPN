@@ -4,22 +4,30 @@
 import $ from './tools';
 import events from './events';
 
-/** subscribe class */
-class Subscribe {
-  _modalName = 'subscribe';
+/** subscribe-module */
+class SubscribeModule {
+  /** private properties */
+  _popupName = 'subscribe';
   _subscribe = null;
 
-  /** public methods */
-  initEvents() {
+  /** static methods */
+  static init() {
+    const subscribeModule = new SubscribeModule();
     events
-      .on('open-subscribe-modal', this._openSubscribeModalHandler.bind(this))
-      .on('init-subscribe-events', this._initSubscribeEventsHandler.bind(this));
+      .on(
+        'open-subscribe-modal',
+        subscribeModule._openSubscribeModalHandler.bind(subscribeModule)
+      )
+      .on(
+        'init-subscribe-events',
+        subscribeModule._initSubscribeEventsHandler.bind(subscribeModule)
+      )
   }
 
   /** private methods */
   _openSubscribeModalHandler() {
     events.emit('open-popup', {
-      name: this._modalName,
+      name: this._popupName,
       openCallback: this._subscribeOpenCallback
     });
   }
@@ -38,4 +46,4 @@ class Subscribe {
 }
 
 /** export */
-export default Subscribe;
+export default SubscribeModule;
