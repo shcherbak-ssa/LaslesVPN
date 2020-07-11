@@ -6,13 +6,11 @@ import events from './events';
 
 /** header-module class */
 class HeaderModule {
-  constructor() {
-    this._header = $('#header');
-    this._burgerButton = this._header.$('.header--burger-button');
-    this._signButtons = this._header.$('.header--sing-buttons');
-    this._menuBgComponent = $.clone('menu-bg');
-    this._subscribeComponent = $.clone('subscribe');
-  }
+  _header = $('#header');
+  _burgerButton = this._header.$('.header--burger-button');
+  _signButtons = this._header.$('.header--sing-buttons');
+  _menuBgComponent = $.clone('menu-bg');
+  _subscribeComponent = $.clone('subscribe');
 
   /** static methods */
   static init() {
