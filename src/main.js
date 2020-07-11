@@ -1,18 +1,21 @@
 'use strict';
 
+import '@babel/polyfill';
 import './styles/main.scss';
 
-import Header from './modules/header';
+import events from './modules/events';
+
+import ImportModule from './modules/import';
+import ResizeModule from './modules/resize';
 import Nav from './modules/nav';
 import Popup from './modules/popup';
 import Buttons from './modules/buttons';
 import Subscribe from './modules/subscribe';
 import Inputs from './modules/inputs';
-import Slider from './modules/slider';
 import Sing from './modules/sing';
 
-const header = new Header();
-header.init();
+ImportModule.init();
+ResizeModule.init();
 
 const nav = new Nav();
 nav.init();
@@ -29,8 +32,7 @@ subscribe.initEvents();
 const inputs = new Inputs();
 inputs.initEvents();
 
-const slider = new Slider();
-slider.init();
-
 const sing = new Sing();
 sing.initEvents();
+
+events.emit('forse-resize');

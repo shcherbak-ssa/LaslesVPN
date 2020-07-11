@@ -17,7 +17,8 @@ const webpackConfig = ({isDev}) => {
     entry: joinPaths(SRC_DIRNAME, 'main.js'),
     output: {
       path: resolve(__dirname, 'public'),
-      filename: '[name].js'
+      filename: 'js/[name].js',
+      chunkFilename: 'js/[name].js'
     },
     watch: isDev,
     module: {

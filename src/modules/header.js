@@ -4,8 +4,8 @@
 import $ from './tools';
 import events from './events';
 
-/** header class */
-class Header {
+/** header-module class */
+class HeaderModule {
   constructor() {
     this._header = $('#header');
     this._burgerButton = this._header.$('.header--burger-button');
@@ -14,13 +14,17 @@ class Header {
     this._subscribeComponent = $.clone('subscribe');
   }
 
-  /** public methods */
-  init() {
+  /** static methods */
+  static init() {
+    const headerModule = new HeaderModule();
+    headerModule._burgerButton.on(
+      'click',
+      headerModule._burgerButtonClickHandler.bind(headerModule)
+    );
     events.on('close-menu', () => {
-      this._header.remove('.is-menu-open');
-      this._closeMenu();
+      headerModule._header.remove('.is-menu-open');
+      headerModule._closeMenu();
     });
-    this._burgerButton.on('click', this._burgerButtonClickHandler.bind(this));
   }
 
   /** private methods */
@@ -61,4 +65,4 @@ class Header {
 }
 
 /** export */
-export default Header;
+export default HeaderModule;

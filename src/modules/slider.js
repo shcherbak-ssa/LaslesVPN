@@ -9,7 +9,7 @@ const SLIDE_MARGIN_RIGHT = 50;
 const MOBILE_WIDTH_POINT = 500;
 
 /** slider class */
-class Slider {
+class SliderModule {
   constructor() {
     this._slider = $('#slider');
     this._slidesContainer = this._slider.$('.slider--slides');
@@ -23,14 +23,14 @@ class Slider {
     this._lastSlideIndex = this._slides.length - 1;
   }
 
-  /** public methods */
-  init() {
-    this._setIndexesClickEvents();
-    this._setSlidesClickEvents();
-    this._setPrevButtonClickEvent();
-    this._setNextButtonClickEvent();
-
-    this._changeSlide();
+  /** static methods */
+  static init() {
+    const sliderModule = new SliderModule();
+    sliderModule._setIndexesClickEvents();
+    sliderModule._setSlidesClickEvents();
+    sliderModule._setPrevButtonClickEvent();
+    sliderModule._setNextButtonClickEvent();
+    sliderModule._changeSlide();
   }
 
   /** private methods */
@@ -108,10 +108,7 @@ class Slider {
   // move slide
   _moveSlide() {
     if( this._lastActiveSlideIndex === this._currentSlideIndex ) return;
-    this._moveSlideInMobile();
-    //this._isMobileWidth() ? this._moveSlideInMobile() : '';
-  }
-  _moveSlideInMobile() {
+    
     const translateValue = this._getTranslateValue();
     this._updateSlidesContainerTranformStyle(translateValue);
   }
@@ -130,4 +127,4 @@ class Slider {
 }
 
 /** export */
-export default Slider;
+export default SliderModule;
