@@ -14,7 +14,7 @@ include ./number-item/number-item.pug
 //- component
 mixin numbers-section()
   +base-section-container('')
-    .numbers-section(data-class="main-radius flex-between box-shadow")
+    .numbers-section(data-class="mr fbt bxs")
       each item in numberItems
         +number-item(item)
         +devider()

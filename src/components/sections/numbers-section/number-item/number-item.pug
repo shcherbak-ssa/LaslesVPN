@@ -1,9 +1,9 @@
 
 mixin number-item(numberItem)
   .number-item
-    .number-item--icon(data-class="circle flex-center")
+    .number-item--icon(data-class="circle fc")
       - let icon = `assets/icons/${numberItem.icon}.svg`;
       img.number-item--icon-item(src=icon)
-    .number-item--text(data-class="flex-column")
-      .number-item--number(data-class="font-bold")= numberItem.number
+    .number-item--text(data-class="fcl")
+      .number-item--number(data-class="fb")= numberItem.number
       .number-item--description= numberItem.description

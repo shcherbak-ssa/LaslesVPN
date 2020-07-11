@@ -40,16 +40,16 @@ include ./link-list/link-list.pug
 //- component
 mixin footer()
   footer#footer.footer
-    .footer--container(data-class="box-sizing site-content-center flex-between")
+    .footer--container(data-class="bs scc fbt")
       .footer--info
         +base-logo()(class="footer--logo")
         .footer--text.
-          <span data-class="font-medium">LaslesVPN</span> is a private virtual network that has unique features and has high security.
-        .footer--social(data-class="flex-between")
+          <span data-class="fm">LaslesVPN</span> is a private virtual network that has unique features and has high security.
+        .footer--social(data-class="fbt")
           each icon in socialIcons
             +base-social-icon(icon)
         +base-copyright()
-      .footer--link-lists(data-class="flex")
+      .footer--link-lists(data-class="f")
         each list in linkLists
           +link-list(list)
         

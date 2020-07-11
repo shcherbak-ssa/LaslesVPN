@@ -1,12 +1,12 @@
 
 mixin slide(slide, index)
   - let avatar = `assets/images/${slide.avatar}.png`;
-  .slide(data-class="click main-border main-radius box-sizing", data-slide-index=index)
-    .slide--head(data-class="w100 flex-between")
+  .slide(data-class="click mb mr bs", data-slide-index=index)
+    .slide--head(data-class="w100 fbt")
       .slide--customer
         img.slide--avatar(src=avatar)
         .slide--data
-          .slide--name(data-class="font-medium")= slide.name
+          .slide--name(data-class="fm")= slide.name
           .slide--location= slide.location
       .slide--assessment
         .slide--number 4.5

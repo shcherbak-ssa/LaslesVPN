@@ -3,7 +3,7 @@
 
 mixin sponsors-section()
   +base-section-container('sponsors-section')
-    .sponsors-section--container(data-class="flex-around")
+    .sponsors-section--container(data-class="fa")
       each sponsor in sponsors
         - let sponsorImage = `assets/images/${sponsor}.png`;
         img.sponsors-section--image(src=sponsorImage)

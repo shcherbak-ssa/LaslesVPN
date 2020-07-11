@@ -4,10 +4,10 @@
 
 //- component
 mixin sing-form(inputs)
-  .sing-form(data-class="flex-column")
+  .sing-form(data-class="fcl")
     +base-header-level-2('')(class="sing-form--header")
     +base-paragraph('Discover interesting features from us')(class="sing-form--paragraph")
-    .sing-form--socials(data-class="flex-between")
+    .sing-form--socials(data-class="fbt")
       each icon in social
         +base-social-icon(icon)
     +base-input(inputs.email)(class="sing-form--input")

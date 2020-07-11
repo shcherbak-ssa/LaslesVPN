@@ -1,6 +1,6 @@
 
 mixin link-list(linkList)
-  .link-list(data-class="flex-column")
+  .link-list(data-class="fcl")
     +base-header-level-3(linkList.header)(class="link-list--header")
     each value in linkList.list
       +base-link('', value)(class="link-list--link")
