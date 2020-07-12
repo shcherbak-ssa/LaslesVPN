@@ -31,7 +31,7 @@ $popup-bgcolor: rgba($main-header-color, 0.5);
     -short-size: 480px 400px;
 
     &::before {
-      background: url('assets/images/subscribe-man.png') left bottom no-repeat;
+      background: url('/assets/images/subscribe-man.png') left bottom no-repeat;
       z-index: -1;
       -short-size: 100%;
       @include psevdo-element;

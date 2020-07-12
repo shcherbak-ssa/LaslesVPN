@@ -1,6 +1,6 @@
 
 mixin slide(slide, index)
-  - let avatar = `assets/images/${slide.avatar}.png`;
+  - let avatar = `/assets/images/${slide.avatar}.png`;
   .slide(data-class="click mb mr bs", data-slide-index=index)
     .slide--head(data-class="w100 fbt")
       .slide--customer
@@ -10,5 +10,5 @@ mixin slide(slide, index)
           .slide--location= slide.location
       .slide--assessment
         .slide--number 4.5
-        img.slide--star(src="assets/icons/star.svg")
+        img.slide--star(src="/assets/icons/star.svg")
     .slide--body(data-class="w100")= slide.body

@@ -31,7 +31,7 @@ $design-width: 1440;
     $map-height: $design-map-height/$design-width * 100vw;
 
     background: {
-      image: url('assets/images/world-map.png');
+      image: url('/assets/images/world-map.png');
       size: cover;
     };
     margin: 0 auto;

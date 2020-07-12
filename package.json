@@ -4,6 +4,7 @@
   "description": "Simple landing page site for my portfolio",
   "main": "index.js",
   "scripts": {
+    "server": "static public",
     "dev": "webpack --env.isDev",
     "build": "webpack"
   },

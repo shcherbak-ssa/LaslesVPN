@@ -22,12 +22,12 @@ $sing-frame-bgcolor: rgba($main-header-color, 0.5);
 
     .sing-frame.is-sing-in & {
       @media screen and (min-width: 1025px) {
-        background-image: url('assets/images/singin-bg.png');
+        background-image: url('/assets/images/singin-bg.png');
       }
     }
     .sing-frame.is-sing-up & {
       @media screen and (min-width: 1025px) {
-        background-image: url('assets/images/singup-bg.png');
+        background-image: url('/assets/images/singup-bg.png');
       }
     }
   }

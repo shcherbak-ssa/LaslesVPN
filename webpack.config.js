@@ -71,7 +71,7 @@ const webpackConfig = ({isDev}) => {
         template: joinPaths(SRC_DIRNAME, 'index.pug')
       }),
       new MiniCssExtractPlugin({
-        filename: '[name].css'
+        filename: 'css/[name].css'
       })
     ]
   }
