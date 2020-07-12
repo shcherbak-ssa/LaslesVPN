@@ -30,8 +30,25 @@ $plan-cost-span-color: $main-text-color;
     }
   }
   &--image {
+    -short-size: 150px 170px;
+
     @media screen and (max-width: 580px) {
       display: none;
+    }
+    @media screen and (min-width: 581px) {
+      .plan:nth-child(1) & {
+        background: url('assets/images/free-plan.png') center no-repeat;
+      }
+    }
+    @media screen and (min-width: 581px) {
+      .plan:nth-child(2) & {
+        background: url('assets/images/standard-plan.png') center no-repeat;
+      }
+    }
+    @media screen and (min-width: 581px) {
+      .plan:nth-child(3) & {
+        background: url('assets/images/premium-plan.png') center no-repeat;
+      }
     }
   }
   &--image, &--header {

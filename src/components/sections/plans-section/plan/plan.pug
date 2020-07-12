@@ -4,12 +4,11 @@ include ./plan-list-item/plan-list-item.pug
 
 //- component
 mixin plan(planItem)
-  - let planImage = `assets/images/${planItem.image}.png`;
   - let cost = planItem.cost ? `$${planItem.cost} <span>/ mo</span>` : 'Free';
 
   .plan(data-class="mr mb bs fbt")
     .plan--description(data-class="fcl")
-      img.plan--image(src=planImage)
+      .plan--image
       .plan--content
         +base-header-level-3(planItem.header)(class="plan--header")
         .plan--list
