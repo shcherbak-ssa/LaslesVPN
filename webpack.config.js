@@ -7,25 +7,19 @@ const {join: joinPaths, resolve} = require('path');
 const SRC_DIRNAME = joinPaths(__dirname, 'src');
 
 /** webpack plugins */
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const UglifyjsWebpackPlugin = require('uglifyjs-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 /** webpack config */
-const webpackConfig = (env) => {
-  const isDev = env.isDev || false;
-  process.env.NODE_ENV = getCurrentMode(isDev);
-
+const webpackConfig = ({isDev}) => {
   return {
-    mode: getCurrentMode(isDev),
+    mode: isDev ? 'development' : 'production',
     entry: joinPaths(SRC_DIRNAME, 'main.js'),
     output: {
       path: resolve(__dirname, 'public'),
       filename: 'js/[name].js',
       chunkFilename: 'js/[name].js'
     },
-    devtool: isDev && 'inline-source-map',
     watch: isDev,
     module: {
       rules: [
@@ -71,11 +65,7 @@ const webpackConfig = (env) => {
         '@': SRC_DIRNAME
       }
     },
-    optimization: {
-      minimizer: isDev ? [] : [new UglifyjsWebpackPlugin()],
-    },
     plugins: [
-      new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
         favicon: joinPaths(SRC_DIRNAME, 'assets', 'favicon.ico'),
         template: joinPaths(SRC_DIRNAME, 'index.pug')
@@ -87,10 +77,4 @@ const webpackConfig = (env) => {
   }
 };
 
-/** help functions */
-function getCurrentMode(isDev) {
-  return isDev ? 'development' : 'production';
-}
-
-/** export */
 module.exports = webpackConfig;
