@@ -1,11 +1,15 @@
 'use strict';
 
 /** postcss config */
-const postcssConfig = {
-  plugins: {
-    'autoprefixer': {},
-    'postcss-short': { prefix: 'short', skip: 'x' },
+const postcssConfig = ({env}) => {
+  return {
+    plugins: {
+      'autoprefixer': {},
+      'postcss-short': { prefix: 'short', skip: 'x' },
+      'cssnano': env === 'production' ? {} : false
+    }
   }
 };
 
+/** export */
 module.exports = postcssConfig;

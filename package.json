@@ -6,7 +6,7 @@
   "scripts": {
     "server": "static public",
     "dev": "webpack --env.isDev",
-    "build": "webpack"
+    "build": "webpack --env"
   },
   "repository": {
     "type": "git",
@@ -26,7 +26,9 @@
     "@babel/preset-env": "^7.10.4",
     "autoprefixer": "^9.8.4",
     "babel-loader": "^8.1.0",
+    "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.6.0",
+    "cssnano": "^4.1.10",
     "html-webpack-plugin": "^4.3.0",
     "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.14.1",
@@ -39,6 +41,7 @@
     "pug-loader": "^2.4.0",
     "sass-loader": "^9.0.1",
     "style-loader": "^1.2.1",
+    "uglifyjs-webpack-plugin": "^2.2.0",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.12"
   }
