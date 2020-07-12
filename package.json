@@ -4,7 +4,7 @@
   "description": "Simple landing page site for my portfolio",
   "main": "index.js",
   "scripts": {
-    "server": "static public",
+    "server": "static public -H",
     "dev": "webpack --env.isDev",
     "build": "webpack"
   },
@@ -27,6 +27,7 @@
     "autoprefixer": "^9.8.4",
     "babel-loader": "^8.1.0",
     "css-loader": "^3.6.0",
+    "cssnano": "^4.1.10",
     "html-webpack-plugin": "^4.3.0",
     "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.14.1",

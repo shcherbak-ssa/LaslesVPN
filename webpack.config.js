@@ -11,9 +11,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 /** webpack config */
-const webpackConfig = ({isDev}) => {
+const webpackConfig = (env = {}) => {
+  const isDev = env.isDev || false;
+  process.env.NODE_ENV = getCurrentMode(isDev);
+
   return {
-    mode: isDev ? 'development' : 'production',
+    mode: getCurrentMode(isDev),
     entry: joinPaths(SRC_DIRNAME, 'main.js'),
     output: {
       path: resolve(__dirname, 'public'),
@@ -77,4 +80,10 @@ const webpackConfig = ({isDev}) => {
   }
 };
 
+/** help function */
+function getCurrentMode(isDev) {
+  return isDev ? 'development' : 'production';
+}
+
+/** export */
 module.exports = webpackConfig;
